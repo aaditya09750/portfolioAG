@@ -161,11 +161,6 @@ addEventOnElements(hoveredElements, "mouseout", function () {
 });
 
 
-
-/**
- * Typewriter effect
- */
-
 const typewriterLines = document.querySelectorAll(".typewriter-line[data-typewriter]");
 
 if (typewriterLines.length > 0) {
@@ -174,13 +169,14 @@ if (typewriterLines.length > 0) {
   function typeWriterLine(lineElement, callback) {
     const text = lineElement.dataset.typewriter;
     let index = 0;
+    lineElement.textContent = "";
     lineElement.classList.add("typing");
     
     function type() {
       if (index < text.length) {
         lineElement.textContent += text.charAt(index);
         index++;
-        setTimeout(type, 80);
+        setTimeout(type, 50);
       } else {
         lineElement.classList.remove("typing");
         lineElement.classList.add("done");
@@ -196,10 +192,18 @@ if (typewriterLines.length > 0) {
         currentLine++;
         setTimeout(typeNextLine, 300);
       });
+    } else {
+      currentLine = 0;
+      setTimeout(function() {
+        typewriterLines.forEach(line => {
+          line.classList.remove("done");
+          line.textContent = "";
+        });
+        typeNextLine();
+      }, 1000);
     }
   }
   
-  // Start typewriter after preloader finishes
   window.addEventListener("DOMContentLoaded", function () {
     setTimeout(typeNextLine, 800);
   });
