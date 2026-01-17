@@ -5,10 +5,13 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Responsive](https://img.shields.io/badge/Responsive-Design-00D4FF?style=for-the-badge&logo=css3&logoColor=white)
 ![Ionicons](https://img.shields.io/badge/Ionicons-5.x-3880FF?style=for-the-badge&logo=ionic&logoColor=white)
+![Netlify](https://img.shields.io/badge/Netlify-Deployed-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
 
 A modern, elegant, and fully responsive personal portfolio website showcasing professional skills, achievements, and contact information. Built with vanilla HTML5, CSS3, and JavaScript featuring advanced animations, interactive elements, and a stunning dark theme design.
 
 **Developer:** Aaditya Gunjal - Full Stack Developer
+
+**Live Preview:** [https://aadityag975pf.netlify.app](https://aadityag975pf.netlify.app/)
 
 ## Core Features
 
