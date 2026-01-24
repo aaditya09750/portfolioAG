@@ -40,7 +40,7 @@ A modern, elegant, and fully responsive personal portfolio website showcasing pr
 | HTML5 | Latest | Semantic markup structure with accessibility features |
 | CSS3 | Latest | Advanced styling with custom properties, animations, and responsive design |
 | JavaScript | ES6+ | Interactive functionality with DOM manipulation and event handling |
-| Google Fonts | Roboto | Modern sans-serif typography for optimal readability |
+| Google Fonts | Poppins | Modern sans-serif typography for optimal readability |
 | Recoleta Font | Custom | Elegant serif display font for headings and titles |
 | Ionicons | 5.5.2 | Comprehensive icon library for UI elements |
 | Web3Forms | API | Serverless contact form submission handling |
@@ -99,7 +99,7 @@ cd Aaditya-Portfolio
 ### Font Families
 
 **Recoleta** - Display serif font for headings and titles, providing elegant personality
-**Roboto** - Clean sans-serif for body text, ensuring optimal readability
+**Poppins** - Clean sans-serif for body text, ensuring optimal readability
 
 ## Website Sections
 
