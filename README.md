@@ -56,8 +56,8 @@ A modern, elegant, and fully responsive personal portfolio website showcasing pr
 
 ```bash
 # Clone the repository
-git clone https://github.com/aaditya09750/Aaditya-Portfolio.git
-cd Aaditya-Portfolio
+git clone https://github.com/aaditya09750/portfolioAG.git
+cd portfolioAG
 
 # Open directly in browser
 # Simply open index.html in your preferred browser
