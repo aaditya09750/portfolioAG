@@ -299,10 +299,10 @@ const mousemove = (event) => {
     const intersects = raycaster.intersectObject(baseMesh);
     if (intersects[0]) {
         isIntersecting = true;
-        if (!grabbing) document.body.style.cursor = 'pointer';
+        // custom cursor handles visual feedback
     }
     else {
-        if (!grabbing) document.body.style.cursor = 'default';
+        // custom cursor handles visual feedback
     }
 }
 
@@ -321,7 +321,7 @@ const mousedown = () => {
         if (!mouseDown) mouseup();
     }, 500);
 
-    document.body.style.cursor = 'grabbing';
+    // custom cursor handles visual feedback
     grabbing = true;
 }
 
@@ -335,8 +335,7 @@ const mouseup = () => {
     });
 
     grabbing = false;
-    if (isIntersecting) document.body.style.cursor = 'pointer';
-    else document.body.style.cursor = 'default';
+    // custom cursor handles visual feedback
 }
 
 const listenTo = () => {

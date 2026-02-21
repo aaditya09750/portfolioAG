@@ -270,6 +270,12 @@
    * CUSTOM CURSOR
    */
 
+  *,
+  *::before,
+  *::after {
+    cursor: none !important;
+  }
+
   .cursor-dot,
   .cursor-outline {
     display: block;
