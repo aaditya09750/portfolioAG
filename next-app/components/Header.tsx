@@ -1,4 +1,5 @@
 "use client"
+/* eslint-disable jsx-a11y/aria-props */
 
 import React, { useEffect, useState } from 'react'
 
@@ -49,13 +50,13 @@ export default function Header() {
           <img src="/assets/images/aglogo.png" width={60} height={60} alt="logo" />
         </a>
 
-        <nav className="navbar" data-navbar role="navigation" aria-label="Main Navigation" aria-hidden={navActive ? 'false' : 'true'}>
+        <nav className="navbar" data-navbar role="navigation" aria-label="Main Navigation" aria-hidden={!navActive ? 'true' : 'false'}>
           <div className="navbar-top">
             <a href="#" className="logo">
               <img src="/assets/images/aglogo.png" width={40} height={40} alt="logo" />
             </a>
 
-            <button className="nav-close-btn" aria-label="close menu" data-nav-toggler aria-expanded={navActive}>
+            <button className="nav-close-btn" aria-label="close menu" data-nav-toggler aria-expanded={navActive ? 'true' : 'false'}>
               <span>✕</span>
             </button>
           </div>
@@ -72,7 +73,7 @@ export default function Header() {
           <span className="span">Send Message</span>
         </a>
 
-        <button className="nav-open-btn btn:hover" aria-label="open menu" data-nav-toggler aria-expanded={navActive}>
+        <button className="nav-open-btn btn:hover" aria-label="open menu" data-nav-toggler aria-expanded={navActive ? 'true' : 'false'}>
           <span className="line line-1" />
           <span className="line line-2" />
         </button>

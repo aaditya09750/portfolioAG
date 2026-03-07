@@ -1,5 +1,5 @@
-@tailwind base;
-@tailwind components;
+/* Tailwind v4 compatibility: use preflight import and utilities. */
+@import "tailwindcss/preflight";
 @tailwind utilities;
 
 /* Import legacy project styles to preserve initial pixel parity. We'll incrementally migrate these to Tailwind. */

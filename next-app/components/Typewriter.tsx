@@ -57,7 +57,7 @@ export default function Typewriter({ lines }: Props) {
   return (
     <>
       {lines.map((l, i) => (
-        <span key={i} className="typewriter-line" data-typewriter={l} ref={(el) => (refs.current[i] = el)} />
+        <span key={i} className="typewriter-line" data-typewriter={l} ref={(el) => { refs.current[i] = el }} />
       ))}
     </>
   )
