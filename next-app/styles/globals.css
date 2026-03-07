@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import legacy project styles to preserve initial pixel parity. We'll incrementally migrate these to Tailwind. */
+@import "./style.css";

@@ -1,0 +1,9 @@
+/* Copied from original project layout.css */
+.container {
+  padding-inline: 16px;
+}
+
+.section {
+  padding-block: var(--section-spacing);
+  overflow-x: hidden;
+}
