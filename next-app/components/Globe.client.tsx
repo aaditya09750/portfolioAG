@@ -323,7 +323,8 @@ export default function Globe() {
   }, [])
 
   return (
-    <figure className="skilset1 img-holder" style={{ '--width': '570' } as React.CSSProperties} id="globe-mask">
+    /* --width and --height drive the aspect-ratio via .img-holder CSS */
+    <figure className="skilset1 img-holder" style={{ '--width': '570', '--height': '420' } as React.CSSProperties} id="globe-mask">
       <div id="globe-container" ref={containerRef}>
         <canvas className="globe-canvas" />
       </div>
