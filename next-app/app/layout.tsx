@@ -1,25 +1,27 @@
 import './globals.css'
-import React from 'react'
+import type { Metadata } from 'next'
+import { Poppins } from 'next/font/google'
 
-export const metadata = {
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  display: 'swap',
+})
+
+export const metadata: Metadata = {
   title: 'Aaditya Gunjal - Full Stack Developer.',
   description: 'This is a personal portfolio made by Aaditya Gunjal',
+  icons: {
+    icon: { url: '/assets/images/favicon.svg', type: 'image/svg+xml' },
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={poppins.className}>
       <head>
-        {/* Favicon */}
-        <link rel="shortcut icon" href="/assets/images/favicon.svg" type="image/svg+xml" />
-
-        {/* Google Fonts — Poppins */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
+        {/* Recoleta custom font */}
+        <link rel="stylesheet" href="/assets/font/font.css" />
 
         {/* Font Awesome 6.5.1 — used for FA brand icons (GitHub, LinkedIn, WhatsApp, Instagram) */}
         <link

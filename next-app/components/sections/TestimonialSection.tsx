@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import { testimonial } from '@/data/constants'
 
 export default function TestimonialSection() {
@@ -15,10 +16,10 @@ export default function TestimonialSection() {
               className="card-banner img-holder"
               style={{ '--width': '70', '--height': '70' } as React.CSSProperties}
             >
-              <img
+              <Image
                 src={testimonial.clientImage}
-                width={70} height={70}
-                loading="lazy"
+                width={70}
+                height={70}
                 alt={testimonial.clientName}
                 className="img-cover"
               />

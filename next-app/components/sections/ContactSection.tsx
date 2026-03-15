@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import { contactItems } from '@/data/constants'
 
 export default function ContactSection() {
@@ -41,15 +42,15 @@ export default function ContactSection() {
             {contactItems.map((item) => (
               <li className="contact-item" key={item.alt}>
                 <div className="item-icon">
-                  <img src={item.icon} width={50} height={50} loading="lazy" alt={item.alt} />
+                  <Image src={item.icon} width={50} height={50} alt={item.alt} />
                 </div>
                 <div>
                   {item.isAddress
-                    ? item.lines.map((line) => (
-                        <address key={line} className="title h6">{line}</address>
+                    ? item.lines.map((line, i) => (
+                        <address key={i} className="title h6">{line}</address>
                       ))
-                    : item.lines.map((line) => (
-                        <span key={line} className="title h6">{line}</span>
+                    : item.lines.map((line, i) => (
+                        <span key={i} className="title h6">{line}</span>
                       ))
                   }
                 </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import { Typewriter } from '@/components/ui'
 
 export default function HeroSection() {
@@ -13,11 +14,13 @@ export default function HeroSection() {
             style={{ '--width': '600', '--height': '600' } as React.CSSProperties}
             data-tilt
           >
-            <img
+            <Image
               src="/assets/images/p4.jpg"
-              width={600} height={600}
+              width={600}
+              height={600}
               alt="Aaditya Gunjal"
               className="img-cover"
+              priority
             />
           </div>
 

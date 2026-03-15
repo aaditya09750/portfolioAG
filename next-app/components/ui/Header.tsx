@@ -1,7 +1,7 @@
 "use client"
-/* eslint-disable jsx-a11y/aria-props */
 
 import React, { useEffect, useState } from 'react'
+import Image from 'next/image'
 
 export default function Header() {
   const [navActive, setNavActive] = useState(false)
@@ -47,13 +47,13 @@ export default function Header() {
     <header className="header" data-header>
       <div className="container">
         <a href="#" className="logo">
-          <img src="/assets/images/aglogo.png" width={60} height={60} alt="logo" />
+          <Image src="/assets/images/aglogo.png" width={60} height={60} alt="logo" />
         </a>
 
         <nav className="navbar" data-navbar role="navigation" aria-label="Main Navigation" aria-hidden={!navActive ? 'true' : 'false'}>
           <div className="navbar-top">
             <a href="#" className="logo">
-              <img src="/assets/images/aglogo.png" width={40} height={40} alt="logo" />
+              <Image src="/assets/images/aglogo.png" width={40} height={40} alt="logo" />
             </a>
 
             <button className="nav-close-btn" aria-label="close menu" data-nav-toggler aria-expanded={navActive ? 'true' : 'false'}>

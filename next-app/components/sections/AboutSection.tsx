@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import { Globe, Tabs } from '@/components/ui'
 import { skills, certs } from '@/data/constants'
 
@@ -86,10 +87,10 @@ const SkillsContent = (
 
     {/* Skillset image with tilt effect */}
     <figure className="skillset1 img-holder" style={{ '--width': '570', '--height': '420' } as React.CSSProperties} data-tilt>
-      <img
+      <Image
         src="/assets/images/skillset1.png"
-        width={570} height={600}
-        loading="lazy"
+        width={570}
+        height={600}
         alt="skill banner"
         className="img-cover"
       />
@@ -110,7 +111,7 @@ const AchievementsContent = (
               style={{ '--width': '534', '--height': '383' } as React.CSSProperties}
               data-tilt
             >
-              <img src={src} width={534} height={383} loading="lazy" alt={alt} className="img-cover" />
+              <Image src={src} width={534} height={383} alt={alt} className="img-cover" />
             </figure>
           </div>
         </li>
