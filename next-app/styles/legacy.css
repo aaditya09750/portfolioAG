@@ -217,7 +217,7 @@ body.nav-active {
 .img-holder {
   aspect-ratio: var(--width) / var(--height);
   overflow: hidden;
-  background-color: var(--bg-jet);
+  /* background-color: var(--bg-jet); */
 }
 
 .img-cover {
