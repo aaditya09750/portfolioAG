@@ -36,7 +36,7 @@ export default function HeroSection() {
 
           <div className="wrapper">
             {/* Download CV */}
-            <a href="./assets/Cv.pdf" className="btn btn:hover" target="_blank" rel="noopener noreferrer">
+            <a href="/cv.pdf" className="btn btn:hover" target="_blank" rel="noopener noreferrer">
               <span className="span">Download CV</span>
               <i className="fa-solid fa-cloud-arrow-down" aria-hidden />
             </a>
