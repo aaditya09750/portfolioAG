@@ -1,5 +1,3 @@
-import React from 'react'
-
 /* ─── Skills ──────────────────────────────────────────────────────── */
 export const skills = [
   { label: 'Database Management', pct: 55 },

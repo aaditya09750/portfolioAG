@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function CTASection() {
   return (
     <section className="section cta" aria-label="work with me">
