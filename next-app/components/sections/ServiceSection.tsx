@@ -1,5 +1,5 @@
-import React from 'react'
 import { services } from '@/data/constants'
+import Image from 'next/image'
 
 export default function ServiceSection() {
   return (
@@ -10,7 +10,7 @@ export default function ServiceSection() {
             <li className="service-item" key={icon}>
               <div className="service-card">
                 <div className="card-icon">
-                  <img
+                  <Image
                     src={`/assets/images/service-icon-${icon}.svg`}
                     width={80} height={80}
                     loading="lazy"
