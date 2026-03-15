@@ -9,5 +9,3 @@ declare module '*.svg'
 // three.js and examples declarations (install @types/three later for full types)
 declare module 'three'
 declare module 'three/examples/jsm/controls/OrbitControls'
-
-export {}

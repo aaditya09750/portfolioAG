@@ -4,7 +4,7 @@ module.exports = {
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './styles/**/*.css',
+    './data/**/*.{ts,tsx}',
   ],
 
   // We rely primarily on global CSS variables (legacy.css) for visual fidelity.
