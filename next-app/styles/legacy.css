@@ -150,6 +150,11 @@ body.nav-active {
   overflow: hidden;
 }
 
+::selection {
+  background-color: var(--bg-white);
+  color: var(--bg-black);
+}
+
 ::-webkit-scrollbar {
   width: 5px;
 }
