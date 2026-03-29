@@ -1,10 +1,42 @@
 /* ─── Skills ──────────────────────────────────────────────────────── */
-export const skills = [
-  { label: 'Database Management', pct: 55 },
-  { label: 'Web Development', pct: 75 },
-  { label: 'Graphic Designing', pct: 95 },
-  { label: 'Data Analysis', pct: 45 },
-  { label: 'Mobile App Development', pct: 35 },
+
+export interface SkillCategory {
+  category: string
+  items: { label: string; iconKey: string }[]
+}
+
+export const techSkills: SkillCategory[] = [
+  {
+    category: 'Frontend',
+    items: [
+      { label: 'React', iconKey: 'react' },
+      { label: 'Next.js', iconKey: 'nextjs' },
+      { label: 'JavaScript', iconKey: 'javascript' },
+      { label: 'TypeScript', iconKey: 'typescript' },
+      { label: 'HTML', iconKey: 'html5' },
+      { label: 'CSS', iconKey: 'css3' },
+    ],
+  },
+  {
+    category: 'Backend',
+    items: [
+      { label: 'Node.js', iconKey: 'nodejs' },
+      { label: 'Express', iconKey: 'express' },
+      { label: 'Python', iconKey: 'python' },
+      { label: 'Java', iconKey: 'java' },
+      { label: 'C', iconKey: 'c' },
+    ],
+  },
+  {
+    category: 'Tools & Database',
+    items: [
+      { label: 'Git', iconKey: 'git' },
+      { label: 'MongoDB', iconKey: 'mongodb' },
+      { label: 'MySQL', iconKey: 'mysql' },
+      { label: 'Docker', iconKey: 'docker' },
+      { label: 'Figma', iconKey: 'figma' },
+    ],
+  },
 ]
 
 /* ─── Certificates ────────────────────────────────────────────────── */

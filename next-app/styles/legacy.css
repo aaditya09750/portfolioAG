@@ -725,6 +725,265 @@ body.nav-active {
   transition: width 1s ease;
 }
 
+/* ==============================
+   SKILLS – PREMIUM SHOWCASE
+   ============================== */
+
+.sk .section-title {
+  margin-block-end: 40px;
+}
+
+/* ── Category rows ───────────────────── */
+.sk-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.sk-row-label {
+  font-family: var(--fontFamily-poppins);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: hsla(0, 0%, 100%, 0.35);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-block-end: 20px;
+}
+
+/* ── Tile flex row ───────────────────── */
+.sk-row-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+/* ── Tile ────────────────────────────── */
+.sk-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 28px 12px 22px;
+  border-radius: 0;
+  cursor: default;
+  overflow: hidden;
+
+  /* glass surface */
+  background:
+    linear-gradient(
+      160deg,
+      hsla(0, 0%, 100%, 0.045) 0%,
+      hsla(0, 0%, 100%, 0.01) 100%
+    );
+  border: 1px solid hsla(0, 0%, 100%, 0.06);
+
+  /* entrance */
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.sk-tile--in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Hover: inner ring glow only ─────── */
+.sk-tile:hover {
+  background:
+    linear-gradient(
+      160deg,
+      hsla(0, 0%, 100%, 0.06) 0%,
+      hsla(0, 0%, 100%, 0.015) 100%
+    );
+  border-color: hsla(0, 0%, 100%, 0.1);
+}
+
+.sk-tile:hover .sk-tile-ring {
+  border-color: hsla(0, 0%, 100%, 0.25);
+  box-shadow:
+    0 0 16px hsla(0, 0%, 100%, 0.1),
+    0 0 40px hsla(0, 0%, 100%, 0.05);
+}
+
+.sk-tile:hover .sk-tile-ring svg {
+  filter: drop-shadow(0 0 6px hsla(0, 0%, 100%, 0.3));
+}
+
+.sk-tile:hover .sk-tile-name {
+  color: var(--text-white);
+}
+
+/* ── Icon ring ───────────────────────── */
+.sk-tile-ring {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid hsla(0, 0%, 100%, 0.08);
+  background: hsla(0, 0%, 100%, 0.03);
+  color: var(--text-white);
+  font-size: 26px;
+  flex-shrink: 0;
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sk-tile-ring svg {
+  width: 26px;
+  height: 26px;
+  transition: filter 0.35s ease;
+}
+
+/* ── Label ───────────────────────────── */
+.sk-tile-name {
+  font-family: var(--fontFamily-poppins);
+  font-weight: var(--weight-medium);
+  font-size: 1.25rem;
+  color: hsla(0, 0%, 100%, 0.55);
+  text-align: center;
+  line-height: 1.25;
+  transition: color 0.3s ease;
+}
+
+/* ── Responsive ──────────────────────── */
+
+@media (max-width: 374px) {
+  .sk-row-items {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .sk-tile {
+    padding: 22px 8px 16px;
+    gap: 12px;
+  }
+}
+
+@media (min-width: 480px) {
+  .sk-row-items {
+    gap: 16px;
+  }
+  .sk-tile {
+    padding: 30px 14px 24px;
+  }
+  .sk-tile-ring {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+  }
+  .sk-tile-ring svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (min-width: 575px) {
+  .sk-row-items {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 16px;
+  }
+  .sk-tile-name {
+    font-size: 1.28rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .sk .section-title {
+    margin-block-end: 48px;
+  }
+  .sk-rows {
+    gap: 52px;
+  }
+  .sk-row-label {
+    font-size: 1.15rem;
+    margin-block-end: 24px;
+  }
+  .sk-row-items {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 20px;
+  }
+  .sk-tile {
+    padding: 34px 14px 26px;
+    gap: 18px;
+  }
+  .sk-tile-ring {
+    width: 66px;
+    height: 66px;
+    font-size: 30px;
+  }
+  .sk-tile-ring svg {
+    width: 30px;
+    height: 30px;
+  }
+  .sk-tile-name {
+    font-size: 1.32rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .sk-row-items {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 22px;
+  }
+  .sk-tile {
+    padding: 38px 16px 28px;
+  }
+  .sk-tile-ring {
+    width: 72px;
+    height: 72px;
+    font-size: 32px;
+  }
+  .sk-tile-ring svg {
+    width: 32px;
+    height: 32px;
+  }
+  .sk-tile-name {
+    font-size: 1.36rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .sk .section-title {
+    margin-block-end: 56px;
+  }
+  .sk-rows {
+    gap: 60px;
+  }
+  .sk-row-label {
+    font-size: 1.2rem;
+    margin-block-end: 28px;
+  }
+  .sk-row-items {
+    gap: 24px;
+  }
+  .sk-tile {
+    padding: 42px 16px 30px;
+    gap: 20px;
+  }
+  .sk-tile-ring {
+    width: 78px;
+    height: 78px;
+    font-size: 36px;
+  }
+  .sk-tile-ring svg {
+    width: 36px;
+    height: 36px;
+  }
+  .sk-tile-name {
+    font-size: 1.4rem;
+  }
+}
+
 /* Award / certificate cards */
 .award-card {
   position: relative;

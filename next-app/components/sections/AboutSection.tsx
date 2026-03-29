@@ -1,7 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
 import { Globe, Tabs } from '@/components/ui'
-import { skills, certs } from '@/data/constants'
+import SkillsContent from '@/components/ui/SkillsContent'
+import { certs } from '@/data/constants'
 
 /* ─── About Me tab content ─────────────────────────────────────── */
 const AboutMeContent = (
@@ -65,38 +66,6 @@ const AboutMeContent = (
 )
 
 /* ─── Skillsets tab content ─────────────────────────────────────── */
-const SkillsContent = (
-  <div className="grid-list">
-    <div className="skill-content">
-      <h3 className="h4 title section-title">Technical Skills.</h3>
-
-      <ul className="skill-list">
-        {skills.map(({ label, pct }) => (
-          <li key={label}>
-            <div className="skill-wrapper">
-              <span className="span">{label}</span>
-              <span className="value">{pct}%</span>
-            </div>
-            <div className="progress-bar">
-              <div className="progress-fill" style={{ width: `${pct}%` }} />
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
-
-    {/* Skillset image with tilt effect */}
-    <figure className="skillset1 img-holder" style={{ '--width': '570', '--height': '420' } as React.CSSProperties} data-tilt>
-      <Image
-        src="/assets/images/skillset1.png"
-        width={570}
-        height={600}
-        alt="skill banner"
-        className="img-cover"
-      />
-    </figure>
-  </div>
-)
 
 /* ─── Achievements tab content ──────────────────────────────────── */
 const AchievementsContent = (
@@ -123,7 +92,7 @@ const AchievementsContent = (
 /* ─── Tab definitions ───────────────────────────────────────────── */
 const aboutTabs = [
   { key: 'about', title: 'About Me', content: AboutMeContent },
-  { key: 'skillset', title: 'Skillsets', content: SkillsContent },
+  { key: 'skillset', title: 'Skillsets', content: <SkillsContent /> },
   { key: 'awward', title: 'Achievements', content: AchievementsContent },
 ]
 
