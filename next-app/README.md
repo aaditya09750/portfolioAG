@@ -26,7 +26,9 @@ A modern, elegant, and fully responsive personal portfolio website built with Ne
 
 **Professional Services Showcase** - Animated service cards with hover effects revealing service titles through elegant opacity transitions, rendered from centralized data constants.
 
-**Skill Progress Bars** - Visual representation of technical proficiencies with animated progress bars driven by data constants for intuitive skill level communication.
+**Tech Stack Showcase** - A premium, categorized skills section featuring real technology logos (React, Next.js, TypeScript, Node.js, Python, MongoDB, Docker, and more) rendered via `react-icons`. Tiles use a glass-gradient surface with sharp edges, circular icon rings, and a scroll-triggered staggered entrance powered by `IntersectionObserver`. Hover reveals an inner-ring glow without scale or displacement, keeping motion subtle and purposeful.
+
+**Lenis Smooth Scrolling** - App-wide buttery-smooth scrolling via `lenis`, wired through a modular `useLenis` custom hook and a `SmoothScroll` client provider mounted in the root layout. Handles the RAF loop, respects `prefers-reduced-motion`, and coexists cleanly with GSAP, the scroll-triggered skills animation, and the sticky header.
 
 **Contact Form Integration** - Fully functional contact form powered by Web3Forms API with real-time submission capabilities, built as a React component.
 
@@ -46,6 +48,8 @@ A modern, elegant, and fully responsive personal portfolio website built with Ne
 | Tailwind CSS | 4.0.0 | Utility-first CSS framework with custom theme extensions |
 | Three.js | 0.183.2 | Core engine for the interactive 3D globe with shader materials |
 | GSAP | 3.14.2 | High-performance animations for globe interactions |
+| Lenis | Latest | Hardware-accelerated smooth scrolling with RAF loop |
+| react-icons | Latest | Tech stack logos for the Skillsets showcase (Simple Icons + Font Awesome sets) |
 | Google Fonts | Poppins | Modern sans-serif typography for optimal readability |
 | Recoleta Font | Custom (WOFF2) | Elegant serif display font for headings and titles |
 | Font Awesome | 6.x (CDN) | Comprehensive icon library for UI elements |
@@ -63,24 +67,24 @@ A modern, elegant, and fully responsive personal portfolio website built with Ne
 git clone https://github.com/aaditya09750/portfolioAG.git
 cd portfolioAG/next-app
 
-# Install dependencies (also copies assets via postinstall hook)
-npm install
+# Install dependencies
+pnpm install
 
 # Start development server
-npm run dev
+pnpm dev
 ```
 
 ### Build & Production
 
 ```bash
 # Build for production
-npm run build
+pnpm build
 
 # Start production server
-npm run start
+pnpm start
 
 # Run linting
-npm run lint
+pnpm lint
 ```
 
 ### Deployment
@@ -109,6 +113,8 @@ next-app/
 │   │   ├── Typewriter.tsx  # Animated typewriter text effect
 │   │   ├── Tilt.tsx        # 3D tilt effect wrapper
 │   │   ├── Tabs.tsx        # Tabbed content with state management
+│   │   ├── SmoothScroll.tsx# Lenis provider (client wrapper in root layout)
+│   │   ├── SkillsContent.tsx# Scroll-animated tech stack tile grid
 │   │   └── Globe.client.tsx# Interactive 3D globe (client component)
 │   └── sections/
 │       ├── HeroSection.tsx       # Hero banner with portrait & typewriter
@@ -119,15 +125,15 @@ next-app/
 │       ├── ContactSection.tsx    # Contact form & map
 │       └── Footer.tsx            # Footer with back-to-top
 ├── data/
-│   └── constants.tsx       # Centralized data (skills, services, certs, etc.)
+│   └── constants.tsx       # Centralized data (tech stack, services, certs, etc.)
+├── hooks/
+│   └── useLenis.ts         # Custom hook: initializes Lenis + RAF loop + reduced-motion guard
 ├── styles/
 │   └── legacy.css          # Consolidated CSS (variables, components, responsive)
 ├── public/
 │   └── assets/
 │       ├── font/           # Recoleta WOFF2 font files
 │       └── images/         # All portfolio images, icons, certificates
-├── scripts/
-│   └── copy-assets.js      # Postinstall asset copy script
 ├── types/
 │   └── global.d.ts         # Module declarations for CSS, images, Three.js
 ├── tailwind.config.js      # Custom theme (colors, fonts, spacing)
@@ -218,10 +224,14 @@ fontSize: {
 - Contact information display
 
 **Skillsets Tab**
-- Technical skills with visual progress bars
-- Database Management (55%), Web Development (75%)
-- Graphic Designing (95%), Data Analysis (45%)
-- Mobile App Development (35%)
+- Premium tech stack showcase grouped by category: **Frontend**, **Backend**, and **Tools & Database**
+- Frontend: React, Next.js, JavaScript, TypeScript, HTML, CSS
+- Backend: Node.js, Express, Python, Java, C
+- Tools & Database: Git, MongoDB, MySQL, Docker, Figma
+- Each skill rendered as a glass tile with a circular icon ring, using real brand logos from `react-icons`
+- Scroll-triggered staggered entrance (65ms per tile) via `IntersectionObserver` — no layout shift, no jank
+- Inner icon ring glows on hover; no scale or translate for a restrained, professional feel
+- Fully responsive: 2-column on small phones, `auto-fill` grid (130–150px min) from tablets up, with progressive icon/label sizing at 480/575/768/992/1200 breakpoints
 
 **Achievements Tab**
 - Certificate gallery with tilt effects
@@ -296,6 +306,17 @@ fontSize: {
 - Mouse-hover extrusion effect on globe points
 - Instanced mesh rendering for smooth 60fps performance
 - Custom vertex and fragment shaders for visual effects
+
+### Lenis Smooth Scrolling
+- App-wide smooth scroll mounted once in the root layout via the `SmoothScroll` client provider
+- `useLenis` custom hook owns the RAF loop, cleans up on unmount, and short-circuits when `prefers-reduced-motion: reduce` is set
+- Duration `1.2s` with an exponential ease-out curve for a weighted, inertia-driven feel
+- Native CSS `scroll-behavior: smooth` removed from `html` to avoid conflicting with Lenis' JS scroll
+
+### Skills Scroll-Triggered Reveal
+- `IntersectionObserver` at `0.15` threshold flips a `visible` state once the skills section enters the viewport
+- Each tile fades/translates in with a 65ms per-item cascade and a `cubic-bezier(0.22, 1, 0.36, 1)` ease
+- Respects reduced motion — instantly reveals the final state without animating
 
 ## Customization Guide
 
