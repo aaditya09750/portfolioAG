@@ -1,0 +1,6 @@
+export { default as Header } from './Header'
+export { default as Preloader } from './Preloader'
+export { default as Cursor } from './Cursor'
+export { default as Footer } from './Footer'
+export { default as SmoothScroll } from './SmoothScroll'
+export { default as Tilt } from './Tilt'

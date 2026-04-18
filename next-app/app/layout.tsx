@@ -2,7 +2,7 @@ import './globals.css'
 import 'lenis/dist/lenis.css'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
-import SmoothScroll from '@/components/ui/SmoothScroll'
+import { SmoothScroll } from '@/components/layout'
 
 const poppins = Poppins({
   subsets: ['latin'],

@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
 export default function Globe() {
   const containerRef = useRef<HTMLDivElement | null>(null)
@@ -44,9 +44,9 @@ export default function Globe() {
   void main() {
     v_offset = a_offset;
     vec3 newPosition = position;
-    
+
     vNormal = normalize(normalMatrix * (instanceMatrix * vec4(normal, 0.0)).xyz);
-    
+
     float time = u_time + a_offset;
     if(u_maxExtrusion > 1.0) {
         newPosition.xyz = newPosition.xyz * u_maxExtrusion + sin(time) * 0.05;
@@ -77,12 +77,12 @@ export default function Globe() {
     float time = u_time + v_offset;
     float pct = abs(sin(time));
     vec3 baseColor = mix(colorA, colorB, pct);
-    
+
     vec3 normal = normalize(vNormal);
     vec3 viewDir = normalize(vViewPosition);
     float fresnel = pow(1.0 - max(dot(normal, viewDir), 0.0), 3.0);
     vec3 rimColor = vec3(0.5, 0.8, 0.8) * fresnel * 0.4;
-    
+
     gl_FragColor = vec4(baseColor + rimColor, 1.0);
   }
 `
@@ -207,7 +207,6 @@ export default function Globe() {
         const instancedDotMesh = new THREE.InstancedMesh(dotGeometry, material, positions.length)
 
         const offsetAttribute = new THREE.InstancedBufferAttribute(new Float32Array(offsets), 1)
-        // attach instanced attribute
         instancedDotMesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage)
         dotGeometry.setAttribute('a_offset', offsetAttribute)
 
@@ -296,7 +295,6 @@ export default function Globe() {
     init()
 
     return () => {
-      // cleanup
       window.removeEventListener('resize', resize)
       window.removeEventListener('mousemove', mousemove)
       window.removeEventListener('mousedown', mousedown)

@@ -41,7 +41,7 @@ const iconMap: Record<string, IconType> = {
   figma: SiFigma,
 }
 
-export default function SkillsContent() {
+export default function SkillsTab() {
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
 
@@ -49,9 +49,11 @@ export default function SkillsContent() {
     const el = ref.current
     if (!el) return
 
+    // Reduced motion: skip the observer, reveal on the next frame
+    // (deferred via rAF so we don't synchronously setState inside the effect body)
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      setVisible(true)
-      return
+      const id = requestAnimationFrame(() => setVisible(true))
+      return () => cancelAnimationFrame(id)
     }
 
     const observer = new IntersectionObserver(

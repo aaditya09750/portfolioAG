@@ -1,4 +1,4 @@
-import { Header, Preloader, Cursor, Tilt } from '@/components/ui'
+import { Header, Preloader, Cursor, Footer, Tilt } from '@/components/layout'
 import {
   HeroSection,
   ServiceSection,
@@ -6,7 +6,6 @@ import {
   CTASection,
   TestimonialSection,
   ContactSection,
-  Footer,
 } from '@/components/sections'
 
 export default function Home() {
