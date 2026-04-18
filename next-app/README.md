@@ -1,7 +1,7 @@
 ### AG - RESPONSIVE E-PORTFOLIO (Next.js)
 
-![Next.js](https://img.shields.io/badge/Next.js-16.1.6-000000?style=for-the-badge&logo=next.js&logoColor=white)
-![React](https://img.shields.io/badge/React-19.2.4-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Next.js](https://img.shields.io/badge/Next.js-16.2.4-000000?style=for-the-badge&logo=next.js&logoColor=white)
+![React](https://img.shields.io/badge/React-19.2.5-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.4-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
 ![Three.js](https://img.shields.io/badge/Three.js-0.183.2-000000?style=for-the-badge&logo=three.dot.js&logoColor=white)
@@ -30,7 +30,9 @@ A modern, elegant, and fully responsive personal portfolio website built with Ne
 
 **Lenis Smooth Scrolling** - App-wide buttery-smooth scrolling via `lenis`, wired through a modular `useLenis` custom hook and a `SmoothScroll` client provider mounted in the root layout. Handles the RAF loop, respects `prefers-reduced-motion`, and coexists cleanly with GSAP, the scroll-triggered skills animation, and the sticky header.
 
-**Contact Form Integration** - Fully functional contact form powered by Web3Forms API with real-time submission capabilities, built as a React component.
+**Server-First Architecture** - Every content section and most page chrome renders as a React Server Component — ~17 Server Components vs. ~9 Client Components. Header, Preloader, and Cursor use a **Server-shell + Client-behavior** split: static markup ships in the initial server HTML, while the event-wiring `*Behavior.tsx` siblings render `null` and exist only to attach listeners imperatively. Result: smaller hydration surface, more HTML in the first byte, and a cleaner Server/Client boundary.
+
+**Contact Form Integration** - Fully functional contact form powered by Web3Forms API with real-time submission capabilities, built as a React component. The email input carries `suppressHydrationWarning` to tolerate DOM attribute injection from disposable-email browser extensions (e.g. Temp Mail) that run before React hydrates.
 
 **Embedded Google Maps** - Interactive location display with grayscale styling to maintain design consistency.
 
@@ -42,8 +44,8 @@ A modern, elegant, and fully responsive personal portfolio website built with Ne
 
 | Technology | Version | Purpose |
 |------------|---------|---------|
-| Next.js | 16.1.6 | App Router framework with SSR/SSG, file-based routing |
-| React | 19.2.4 | Component-driven UI with hooks and StrictMode |
+| Next.js | 16.2.4 | App Router framework with SSR/SSG, file-based routing |
+| React | 19.2.5 | Component-driven UI with hooks and StrictMode |
 | TypeScript | 5.4.0 | Static typing with strict mode for type-safe development |
 | Tailwind CSS | 4.0.0 | Utility-first CSS framework with custom theme extensions |
 | Three.js | 0.183.2 | Core engine for the interactive 3D globe with shader materials |
@@ -57,6 +59,7 @@ A modern, elegant, and fully responsive personal portfolio website built with Ne
 | ESLint | 9.39.4 | Code linting with Next.js configuration |
 | Prettier | 3.0.0 | Consistent code formatting |
 | PostCSS | 8.4.20 | CSS processing with Autoprefixer |
+| pnpm | 9.15.9 | Package manager pinned via the `packageManager` field for reproducible installs |
 
 ## Quick Start
 
@@ -102,45 +105,69 @@ pnpm lint
 ```
 next-app/
 ├── app/
-│   ├── layout.tsx          # Root layout with metadata, fonts, preloads
-│   ├── page.tsx            # Home page composing all sections
-│   └── globals.css         # Global CSS importing legacy styles
+│   ├── layout.tsx                      # Root layout with metadata, fonts, preloads
+│   ├── page.tsx                        # Home page composing layout + sections
+│   └── globals.css                     # Global CSS importing legacy styles
 ├── components/
-│   ├── ui/
-│   │   ├── Header.tsx      # Sticky navigation with hamburger menu
-│   │   ├── Preloader.tsx   # Split-curtain loading animation
-│   │   ├── Cursor.tsx      # Custom cursor (desktop only)
-│   │   ├── Typewriter.tsx  # Animated typewriter text effect
-│   │   ├── Tilt.tsx        # 3D tilt effect wrapper
-│   │   ├── Tabs.tsx        # Tabbed content with state management
-│   │   ├── SmoothScroll.tsx# Lenis provider (client wrapper in root layout)
-│   │   ├── SkillsContent.tsx# Scroll-animated tech stack tile grid
-│   │   └── Globe.client.tsx# Interactive 3D globe (client component)
-│   └── sections/
-│       ├── HeroSection.tsx       # Hero banner with portrait & typewriter
-│       ├── ServiceSection.tsx    # Service cards grid
-│       ├── AboutSection.tsx      # Tabbed about/skills/achievements
-│       ├── CTASection.tsx        # Call-to-action banner
-│       ├── TestimonialSection.tsx# Client testimonials
-│       ├── ContactSection.tsx    # Contact form & map
-│       └── Footer.tsx            # Footer with back-to-top
+│   ├── layout/                         # Site-wide chrome + global behaviors
+│   │   ├── Header/
+│   │   │   ├── Header.tsx              # Server: static nav markup
+│   │   │   ├── HeaderBehavior.tsx      # Client: nav toggle + scroll listeners, renders null
+│   │   │   └── index.ts
+│   │   ├── Preloader/
+│   │   │   ├── Preloader.tsx           # Server: curtain markup
+│   │   │   ├── PreloaderBehavior.tsx   # Client: DOMContentLoaded handler, renders null
+│   │   │   └── index.ts
+│   │   ├── Cursor/
+│   │   │   ├── Cursor.tsx              # Server: dot + outline spans
+│   │   │   ├── CursorBehavior.tsx      # Client: mouse tracking, renders null
+│   │   │   └── index.ts
+│   │   ├── Footer.tsx                  # Server
+│   │   ├── SmoothScroll.tsx            # Client: Lenis provider
+│   │   ├── Tilt.tsx                    # Client: [data-tilt] wiring, renders null
+│   │   └── index.ts
+│   ├── sections/                       # Page content, colocated with sub-parts
+│   │   ├── about/
+│   │   │   ├── AboutSection.tsx        # Server: composes the three tabs
+│   │   │   ├── AboutMeTab.tsx          # Server
+│   │   │   ├── SkillsTab.tsx           # Client: IntersectionObserver + tile grid
+│   │   │   ├── AchievementsTab.tsx     # Server
+│   │   │   └── index.ts
+│   │   ├── contact/
+│   │   │   ├── ContactSection.tsx      # Server: composes form + map + list
+│   │   │   ├── ContactForm.tsx         # Server (Web3Forms target)
+│   │   │   ├── ContactMap.tsx          # Server (Google Maps iframe)
+│   │   │   ├── ContactList.tsx         # Server
+│   │   │   └── index.ts
+│   │   ├── HeroSection.tsx             # Server: hero banner with portrait & typewriter
+│   │   ├── ServiceSection.tsx          # Server: service cards grid
+│   │   ├── CTASection.tsx              # Server: call-to-action banner
+│   │   ├── TestimonialSection.tsx      # Server: client testimonials
+│   │   └── index.ts
+│   └── ui/                             # Reusable primitives
+│       ├── Globe.tsx                   # Client: Three.js 3D globe
+│       ├── Tabs.tsx                    # Client: tab state
+│       ├── Typewriter.tsx              # Client: character-typing animation
+│       └── index.ts
 ├── data/
-│   └── constants.tsx       # Centralized data (tech stack, services, certs, etc.)
+│   └── constants.tsx                   # Centralized data (tech stack, services, certs, etc.)
 ├── hooks/
-│   └── useLenis.ts         # Custom hook: initializes Lenis + RAF loop + reduced-motion guard
+│   └── useLenis.ts                     # Custom hook: Lenis + RAF loop + reduced-motion guard
 ├── styles/
-│   └── legacy.css          # Consolidated CSS (variables, components, responsive)
+│   └── legacy.css                      # Consolidated CSS (variables, components, responsive)
 ├── public/
 │   └── assets/
-│       ├── font/           # Recoleta WOFF2 font files
-│       └── images/         # All portfolio images, icons, certificates
+│       ├── font/                       # Recoleta WOFF2 font files
+│       └── images/                     # All portfolio images, icons, certificates
 ├── types/
-│   └── global.d.ts         # Module declarations for CSS, images, Three.js
-├── tailwind.config.js      # Custom theme (colors, fonts, spacing)
-├── next.config.ts          # Next.js configuration (strict mode)
-├── tsconfig.json           # TypeScript config (ES2020, strict, path aliases)
-├── postcss.config.mjs      # PostCSS with Tailwind & Autoprefixer
-└── eslint.config.mjs       # ESLint with Next.js rules
+│   └── global.d.ts                     # Module declarations for CSS, images, Three.js
+├── package.json                        # packageManager: pnpm@9.15.9
+├── pnpm-lock.yaml                      # committed, replaces package-lock.json
+├── tailwind.config.js                  # Custom theme (colors, fonts, spacing)
+├── next.config.ts                      # Next.js configuration (strict mode)
+├── tsconfig.json                       # TypeScript config (ES2020, strict, path aliases)
+├── postcss.config.mjs                  # PostCSS with Tailwind & Autoprefixer
+└── eslint.config.mjs                   # ESLint with Next.js rules
 ```
 
 ## Design System
@@ -359,9 +386,14 @@ module.exports = {
 ### Contact Form Configuration
 
 ```tsx
-{/* Update Web3Forms access key in ContactSection.tsx */}
+{/* Update Web3Forms access key in components/sections/contact/ContactForm.tsx */}
 <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY" />
 ```
+
+The email `<input type="email">` in `ContactForm.tsx` carries `suppressHydrationWarning`
+as a deliberate guard: disposable-email browser extensions (Temp Mail and similar) inject
+attributes into email fields before React hydrates, and this directive tells React to
+tolerate those extension-side mutations on that one element only.
 
 ## Browser Compatibility
 
@@ -388,7 +420,7 @@ module.exports = {
 - Preloaded critical images via `<link rel="preload">` in layout
 - Font preconnect hints for Google Fonts
 - Self-hosted Recoleta font files (WOFF2) for fast loading
-- Client components isolated to interactive features only (Globe, Cursor, etc.)
+- Server Components render all static markup (≈17 files); a small set of `*Behavior.tsx` Client Components attach event listeners imperatively without shipping any markup, minimizing the hydration surface
 
 **Efficient CSS**
 - CSS custom properties for theme consistency
