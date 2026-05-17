@@ -1,5 +1,7 @@
 ### AG - RESPONSIVE E-PORTFOLIO (Next.js)
 
+![Profile Views](https://komarev.com/ghpvc/?username=aaditya09750&style=for-the-badge&color=0e75b6&label=Profile+Views)
+
 ![Next.js](https://img.shields.io/badge/Next.js-16.2.4-000000?style=for-the-badge&logo=next.js&logoColor=white)
 ![React](https://img.shields.io/badge/React-19.2.5-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.4-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
