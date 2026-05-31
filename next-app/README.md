@@ -18,6 +18,8 @@ A modern, elegant, and fully responsive personal portfolio website built with Ne
 
 **Hero Section with Typewriter Effect** - Eye-catching landing area with an animated typewriter effect built as a React component, cycling through personalized introduction text with proper cleanup and StrictMode safety.
 
+**Cinematic Parallax Hero** - Multi-layer parallax motion in the hero area driven by `HeroParallax`, creating depth as the user scrolls while keeping text and CTA elements crisp and readable.
+
 **Interactive Tilt Effect** - Smooth 3D perspective tilt animations on images that respond to mouse movements, implemented as a reusable React component with `data-tilt` attribute support.
 
 **Interactive 3D Globe** - A high-performance, custom-shaded 3D globe built with Three.js and GSAP. Features instanced mesh rendering for 60fps performance, shader materials (vertex & fragment), orbit controls with auto-rotation, mouse interaction with on-hover extrusion, and responsive camera positioning.
