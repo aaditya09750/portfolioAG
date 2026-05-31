@@ -521,6 +521,8 @@ body.nav-active {
   position: fixed;
   max-width: 100%;
   z-index: -5;
+  pointer-events: none;
+  will-change: transform;
 }
 .hero .shape-1 {
   top: -60px;

@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import HeroParallax from '@/components/layout/HeroParallax'
 import { Typewriter } from '@/components/ui'
 
 export default function HeroSection() {
@@ -49,8 +50,26 @@ export default function HeroSection() {
         </div>
 
         {/* Decorative shapes (fixed, behind everything) */}
-        <Image src="/assets/images/hero-shape-1.png" width={559} height={232} alt="" aria-hidden className="shape shape-1" />
-        <Image src="/assets/images/hero-shape-2.png" width={1358} height={497} alt="" aria-hidden className="shape shape-2" />
+        <Image
+          src="/assets/images/hero-shape-1.png"
+          width={559}
+          height={232}
+          alt=""
+          aria-hidden
+          className="shape shape-1"
+          data-parallax="shape-1"
+        />
+        <Image
+          src="/assets/images/hero-shape-2.png"
+          width={1358}
+          height={497}
+          alt=""
+          aria-hidden
+          className="shape shape-2"
+          data-parallax="shape-2"
+        />
+
+        <HeroParallax />
 
       </div>
     </div>
