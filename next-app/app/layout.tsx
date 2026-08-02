@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={poppins.className}>
+    <html lang="en" className={poppins.className} suppressHydrationWarning>
       <head>
         {/* Recoleta custom font */}
         <link rel="stylesheet" href="/assets/font/font.css" />
@@ -35,7 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preload" as="image" href="/assets/images/hero-shape-1.png" />
         <link rel="preload" as="image" href="/assets/images/hero-shape-2.png" />
       </head>
-      <body id="top">
+      <body id="top" suppressHydrationWarning>
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

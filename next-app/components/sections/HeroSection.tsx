@@ -58,6 +58,7 @@ export default function HeroSection() {
           aria-hidden
           className="shape shape-1"
           data-parallax="shape-1"
+          priority
         />
         <Image
           src="/assets/images/hero-shape-2.png"
@@ -67,6 +68,7 @@ export default function HeroSection() {
           aria-hidden
           className="shape shape-2"
           data-parallax="shape-2"
+          priority
         />
 
         <HeroParallax />
