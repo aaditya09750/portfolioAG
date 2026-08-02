@@ -16,11 +16,7 @@
   --bg-smoky-black: hsla(0, 0%, 6%, 1);
   --bg-black: hsla(0, 0%, 0%, 1);
   --gradient-1: linear-gradient(to top, var(--bg-black) 0%, transparent 40%);
-  --gradient-2: radial-gradient(
-    circle at 75% 100%,
-    hsla(79, 100%, 70%, 0.3) 0%,
-    transparent 100%
-  );
+  --gradient-2: radial-gradient(circle at 75% 100%, hsla(79, 100%, 70%, 0.3) 0%, transparent 100%);
   --text-white: hsla(0, 0%, 100%, 1);
   --text-light-gray: hsla(240, 1%, 83%, 1);
   --text-rich-black-fogra-29: hsla(216, 42%, 12%, 1);
@@ -31,8 +27,8 @@
   --border-gainsboro: hsla(220, 13%, 91%, 1);
   --border-eerie-black: hsla(0, 0%, 13%, 1);
   --border-smoky-black: hsla(0, 0%, 6%, 1);
-  --fontFamily-recoleta: "Recoleta", serif;
-  --fontFamily-poppins: "Poppins", sans-serif;
+  --fontFamily-recoleta: 'Recoleta', serif;
+  --fontFamily-poppins: 'Poppins', sans-serif;
   --fontSize-1: 4.6rem;
   --fontSize-2: 4.5rem;
   --fontSize-3: 4rem;
@@ -174,7 +170,7 @@ body.nav-active {
 
 .btn\:hover::before,
 .btn\:hover::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -214,7 +210,7 @@ body.nav-active {
 
 .has-before::before,
 .has-after::after {
-  content: "";
+  content: '';
   position: absolute;
 }
 
@@ -772,12 +768,7 @@ body.nav-active {
   overflow: hidden;
 
   /* glass surface */
-  background:
-    linear-gradient(
-      160deg,
-      hsla(0, 0%, 100%, 0.045) 0%,
-      hsla(0, 0%, 100%, 0.01) 100%
-    );
+  background: linear-gradient(160deg, hsla(0, 0%, 100%, 0.045) 0%, hsla(0, 0%, 100%, 0.01) 100%);
   border: 1px solid hsla(0, 0%, 100%, 0.06);
 
   /* entrance */
@@ -798,12 +789,7 @@ body.nav-active {
 
 /* ── Hover: inner ring glow only ─────── */
 .sk-tile:hover {
-  background:
-    linear-gradient(
-      160deg,
-      hsla(0, 0%, 100%, 0.06) 0%,
-      hsla(0, 0%, 100%, 0.015) 100%
-    );
+  background: linear-gradient(160deg, hsla(0, 0%, 100%, 0.06) 0%, hsla(0, 0%, 100%, 0.015) 100%);
   border-color: hsla(0, 0%, 100%, 0.1);
 }
 
@@ -1010,7 +996,7 @@ body.nav-active {
 }
 
 .cta .section-title::before {
-  content: "";
+  content: '';
   display: block;
   background-color: var(--bg-white);
   width: 60px;
@@ -1301,8 +1287,7 @@ textarea.input-field {
   .tab-btn-item:not(:first-child) {
     border-inline-start: 1px solid var(--border-eerie-black);
   }
-  :is([data-tab-content="interview"], [data-tab-content="exhibition"])
-    .grid-list {
+  :is([data-tab-content='interview'], [data-tab-content='exhibition']) .grid-list {
     grid-template-columns: 1fr 1fr;
   }
   .cta {
@@ -1430,11 +1415,7 @@ textarea.input-field {
   .tab-content .grid-list {
     grid-template-columns: 1fr 1fr;
   }
-  :is(
-      [data-tab-content="interview"],
-      [data-tab-content="exhibition"],
-      [data-tab-content="awward"]
-    )
+  :is([data-tab-content='interview'], [data-tab-content='exhibition'], [data-tab-content='awward'])
     .grid-list {
     grid-template-columns: repeat(3, 1fr);
   }

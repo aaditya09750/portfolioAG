@@ -58,7 +58,8 @@ export default function MaintenanceContent() {
         {/* Headline & Description */}
         <h1 className="mc-title">Crafting Something Extraordinary</h1>
         <p className="mc-description">
-          We are currently conducting scheduled performance enhancements and architecture updates to deliver an even faster, smoother portfolio experience.
+          We are currently conducting scheduled performance enhancements and architecture updates to
+          deliver an even faster, smoother portfolio experience.
         </p>
 
         {/* Status Cards Grid */}
@@ -110,13 +111,28 @@ export default function MaintenanceContent() {
         <p className="mc-copy">© {new Date().getFullYear()} Aaditya Gunjal. All rights reserved.</p>
 
         <div className="mc-socials">
-          <a href="https://github.com/aaditya09750" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <a
+            href="https://github.com/aaditya09750"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
             <i className="fa-brands fa-github" />
           </a>
-          <a href="https://linkedin.com/in/aaditya-gunjal" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <a
+            href="https://linkedin.com/in/aaditya-gunjal"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
             <i className="fa-brands fa-linkedin" />
           </a>
-          <a href="https://wa.me/918433509521" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+          <a
+            href="https://wa.me/918433509521"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+          >
             <i className="fa-brands fa-whatsapp" />
           </a>
         </div>
@@ -144,7 +160,13 @@ export default function MaintenanceContent() {
           transform: translate(-50%, -50%);
           width: 650px;
           height: 650px;
-          background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, rgba(16, 185, 129, 0.08) 40%, rgba(59, 130, 246, 0.06) 70%, transparent 80%);
+          background: radial-gradient(
+            circle,
+            rgba(245, 158, 11, 0.1) 0%,
+            rgba(16, 185, 129, 0.08) 40%,
+            rgba(59, 130, 246, 0.06) 70%,
+            transparent 80%
+          );
           filter: blur(120px);
           pointer-events: none;
         }
@@ -163,8 +185,9 @@ export default function MaintenanceContent() {
         .mc-grid-overlay {
           position: absolute;
           inset: 0;
-          background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                            linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+          background-image:
+            linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
           background-size: 60px 60px;
           mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, #000 70%, transparent 100%);
           pointer-events: none;
@@ -374,9 +397,15 @@ export default function MaintenanceContent() {
           font-weight: 600;
         }
 
-        .mc-status-operational { color: #34d399; }
-        .mc-status-progress { color: #fbbf24; }
-        .mc-status-return { color: #ffffff; }
+        .mc-status-operational {
+          color: #34d399;
+        }
+        .mc-status-progress {
+          color: #fbbf24;
+        }
+        .mc-status-return {
+          color: #ffffff;
+        }
 
         .mc-dot {
           width: 8px;
@@ -385,9 +414,16 @@ export default function MaintenanceContent() {
           flex-shrink: 0;
         }
 
-        .mc-dot-green { background-color: #34d399; }
-        .mc-dot-amber { background-color: #fbbf24; animation: pulse 1.5s infinite; }
-        .mc-dot-blue { background-color: #60a5fa; }
+        .mc-dot-green {
+          background-color: #34d399;
+        }
+        .mc-dot-amber {
+          background-color: #fbbf24;
+          animation: pulse 1.5s infinite;
+        }
+        .mc-dot-blue {
+          background-color: #60a5fa;
+        }
 
         .mc-btn-group {
           display: flex;
@@ -472,7 +508,9 @@ export default function MaintenanceContent() {
           color: rgba(255, 255, 255, 0.6);
           font-size: 1.1rem;
           text-decoration: none;
-          transition: color 0.2s ease, transform 0.2s ease;
+          transition:
+            color 0.2s ease,
+            transform 0.2s ease;
         }
 
         .mc-socials a:hover {
@@ -481,16 +519,24 @@ export default function MaintenanceContent() {
         }
 
         @keyframes spin {
-          to { transform: rotate(360deg); }
+          to {
+            transform: rotate(360deg);
+          }
         }
 
         @keyframes pulse {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.4; }
+          0%,
+          100% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.4;
+          }
         }
 
         @media (max-width: 640px) {
-          .mc-header, .mc-footer {
+          .mc-header,
+          .mc-footer {
             flex-direction: column;
             gap: 12px;
             text-align: center;
@@ -502,7 +548,8 @@ export default function MaintenanceContent() {
           .mc-btn-group {
             flex-direction: column;
           }
-          .mc-btn-primary, .mc-btn-secondary {
+          .mc-btn-primary,
+          .mc-btn-secondary {
             width: 100%;
           }
         }

@@ -1,15 +1,7 @@
 export default function ContactForm() {
   return (
-    <form
-      action="https://api.web3forms.com/submit"
-      method="POST"
-      className="contact-form"
-    >
-      <input
-        type="hidden"
-        name="access_key"
-        value="4af7645a-a2c0-404c-b070-504e3ab63484"
-      />
+    <form action="https://api.web3forms.com/submit" method="POST" className="contact-form">
+      <input type="hidden" name="access_key" value="4af7645a-a2c0-404c-b070-504e3ab63484" />
 
       <input
         type="text"
@@ -26,7 +18,7 @@ export default function ContactForm() {
         autoComplete="off"
         required
         className="input-field"
-        suppressHydrationWarning   
+        suppressHydrationWarning
       />
       <input
         type="tel"
@@ -35,12 +27,7 @@ export default function ContactForm() {
         autoComplete="off"
         className="input-field"
       />
-      <textarea
-        name="message"
-        placeholder="Enter Message"
-        required
-        className="input-field"
-      />
+      <textarea name="message" placeholder="Enter Message" required className="input-field" />
 
       <button type="submit" className="btn btn:hover">
         <span className="span">Send Message.</span>

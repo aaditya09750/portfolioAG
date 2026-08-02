@@ -40,7 +40,8 @@ export default function NotFoundContent() {
 
         <h2 className="nf-subtitle">Page Lost Beyond The Horizon</h2>
         <p className="nf-description">
-          The page you are looking for has been moved, renamed, or never existed in this realm. Let&apos;s get you back on track.
+          The page you are looking for has been moved, renamed, or never existed in this realm.
+          Let&apos;s get you back on track.
         </p>
 
         {/* Buttons */}
@@ -57,11 +58,17 @@ export default function NotFoundContent() {
         {/* Quick Links */}
         <div className="nf-quick-links">
           <span className="nf-quick-label">QUICK JUMP:</span>
-          <Link href="/#about" className="nf-quick-item">About Me</Link>
+          <Link href="/#about" className="nf-quick-item">
+            About Me
+          </Link>
           <span className="nf-dot">•</span>
-          <Link href="/#service" className="nf-quick-item">Services</Link>
+          <Link href="/#service" className="nf-quick-item">
+            Services
+          </Link>
           <span className="nf-dot">•</span>
-          <Link href="/#contact" className="nf-quick-item">Contact</Link>
+          <Link href="/#contact" className="nf-quick-item">
+            Contact
+          </Link>
         </div>
       </main>
 
@@ -70,13 +77,28 @@ export default function NotFoundContent() {
         <p className="nf-copy">© {new Date().getFullYear()} Aaditya Gunjal. All rights reserved.</p>
 
         <div className="nf-socials">
-          <a href="https://github.com/aaditya09750" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <a
+            href="https://github.com/aaditya09750"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
             <i className="fa-brands fa-github" />
           </a>
-          <a href="https://linkedin.com/in/aaditya-gunjal" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <a
+            href="https://linkedin.com/in/aaditya-gunjal"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
             <i className="fa-brands fa-linkedin" />
           </a>
-          <a href="https://wa.me/918433509521" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+          <a
+            href="https://wa.me/918433509521"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+          >
             <i className="fa-brands fa-whatsapp" />
           </a>
         </div>
@@ -104,7 +126,12 @@ export default function NotFoundContent() {
           transform: translate(-50%, -50%);
           width: 600px;
           height: 600px;
-          background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, rgba(59, 130, 246, 0.08) 50%, transparent 70%);
+          background: radial-gradient(
+            circle,
+            rgba(16, 185, 129, 0.12) 0%,
+            rgba(59, 130, 246, 0.08) 50%,
+            transparent 70%
+          );
           filter: blur(100px);
           pointer-events: none;
         }
@@ -123,8 +150,9 @@ export default function NotFoundContent() {
         .nf-grid-overlay {
           position: absolute;
           inset: 0;
-          background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                            linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+          background-image:
+            linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
           background-size: 60px 60px;
           mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, #000 70%, transparent 100%);
           pointer-events: none;
@@ -230,7 +258,12 @@ export default function NotFoundContent() {
           font-weight: 700;
           line-height: 0.9;
           margin: 0 0 16px 0;
-          background: linear-gradient(180deg, #ffffff 0%, #e0e0e0 40%, rgba(255, 255, 255, 0.2) 100%);
+          background: linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #e0e0e0 40%,
+            rgba(255, 255, 255, 0.2) 100%
+          );
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           user-select: none;
@@ -377,7 +410,9 @@ export default function NotFoundContent() {
           color: rgba(255, 255, 255, 0.6);
           font-size: 1.1rem;
           text-decoration: none;
-          transition: color 0.2s ease, transform 0.2s ease;
+          transition:
+            color 0.2s ease,
+            transform 0.2s ease;
         }
 
         .nf-socials a:hover {
@@ -386,12 +421,18 @@ export default function NotFoundContent() {
         }
 
         @keyframes pulse {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.4; }
+          0%,
+          100% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.4;
+          }
         }
 
         @media (max-width: 640px) {
-          .nf-header, .nf-footer {
+          .nf-header,
+          .nf-footer {
             flex-direction: column;
             gap: 12px;
             text-align: center;
@@ -400,7 +441,8 @@ export default function NotFoundContent() {
           .nf-btn-group {
             flex-direction: column;
           }
-          .nf-btn-primary, .nf-btn-secondary {
+          .nf-btn-primary,
+          .nf-btn-secondary {
             width: 100%;
           }
         }

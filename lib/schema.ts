@@ -12,10 +12,7 @@ export function generatePersonSchema() {
     jobTitle: 'Full Stack Developer',
     description:
       'Full Stack Developer specializing in React, Next.js, Node.js, and modern web technologies.',
-    sameAs: [
-      'https://github.com/aaditya09750',
-      'https://www.linkedin.com/in/aaditya09750/',
-    ],
+    sameAs: ['https://github.com/aaditya09750', 'https://www.linkedin.com/in/aaditya09750/'],
     knowsAbout: [
       'React',
       'Next.js',
@@ -51,9 +48,7 @@ export function generateWebSiteSchema() {
 /**
  * Generates a JSON-LD BreadcrumbList schema.
  */
-export function generateBreadcrumbSchema(
-  items: { name: string; url: string }[],
-) {
+export function generateBreadcrumbSchema(items: { name: string; url: string }[]) {
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',

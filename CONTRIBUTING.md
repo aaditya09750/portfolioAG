@@ -25,16 +25,16 @@ pnpm dev:turbo
 
 ### Scripts
 
-| Command | Description |
-|---|---|
-| `pnpm dev` | Start development server |
+| Command          | Description                             |
+| ---------------- | --------------------------------------- |
+| `pnpm dev`       | Start development server                |
 | `pnpm dev:turbo` | Start development server with Turbopack |
-| `pnpm build` | Production build |
-| `pnpm start` | Serve production build |
-| `pnpm lint` | Run ESLint |
-| `pnpm typecheck` | Run TypeScript type checking |
-| `pnpm format` | Format all files with Prettier |
-| `pnpm check` | Run lint + typecheck |
+| `pnpm build`     | Production build                        |
+| `pnpm start`     | Serve production build                  |
+| `pnpm lint`      | Run ESLint                              |
+| `pnpm typecheck` | Run TypeScript type checking            |
+| `pnpm format`    | Format all files with Prettier          |
+| `pnpm check`     | Run lint + typecheck                    |
 
 ### Commit Messages
 
@@ -47,6 +47,7 @@ type(scope): description
 **Types**: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`, `revert`
 
 **Examples**:
+
 ```bash
 feat(skills): add Docker icon to tools section
 fix(fonts): correct Recoleta path casing for Linux
@@ -57,6 +58,7 @@ refactor(layout): extract header into separate component
 ### Pre-commit Hooks
 
 Husky automatically runs the following on every commit:
+
 1. **ESLint** — Lints and auto-fixes staged `.ts` and `.tsx` files
 2. **Prettier** — Formats staged files
 

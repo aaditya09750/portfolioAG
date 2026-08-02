@@ -8,7 +8,7 @@
 > **Styling Engine:** Tailwind CSS 4.3.3 (`@tailwindcss/postcss` v4 engine) + HSL Design Tokens  
 > **Animation & 3D Engine:** Three.js 0.183.2 + GSAP 3.14.2 + Custom GLSL Shaders  
 > **Smooth Scroll Engine:** Lenis 1.3.25  
-> **Package Manager:** pnpm 9.15.9  
+> **Package Manager:** pnpm 9.15.9
 
 ---
 
@@ -17,6 +17,7 @@
 **PortfolioAG** is a production-grade, high-performance personal portfolio web application engineered for Aaditya Gunjal, a Full Stack Developer based in Dombivli / Mumbai, Maharashtra. Rebuilt on Next.js 16 App Router, React 19, TypeScript 6, and Tailwind CSS v4, the project operates as a **statically-driven, content-first web platform**.
 
 ### Core Architecture & Business Goals:
+
 - **Zero Server Overhead**: The site features no server-side API routes, no backend database, and no user authentication. All content is pre-rendered at build time for instant worldwide delivery.
 - **Cinematic Visual Excellence & 3D WebGL Integration**: Integrates a real-time 3D WebGL Interactive Globe with custom vertex/fragment GLSL shaders, double-buffered hero parallax, custom dual-layer cursor, and smooth inertia scrolling.
 - **Sub-Second LCP Performance Target**: Sub-second Largest Contentful Paint (LCP) enabled via AVIF/WebP image formats, 1-year immutable asset caching, pre-loaded WOFF2 Recoleta typography, and deduplicated viewport intersection observers.
@@ -178,6 +179,7 @@ portfolioAG/
 ## 3. Complete Technology & Dependency Matrix (Every Single Package Listed)
 
 ### Production Dependencies (`dependencies` in `package.json`):
+
 1. **`next` (`16.2.12`)**: Next.js App Router framework providing static site generation (SSG), pre-rendering, and layout streaming.
 2. **`react` (`19.2.8`)**: Core UI rendering engine supporting React Server Components (RSC).
 3. **`react-dom` (`19.2.8`)**: DOM rendering bindings for React 19.
@@ -193,6 +195,7 @@ portfolioAG/
 13. **`@vercel/speed-insights` (`2.0.0`)**: Real-time Core Web Vitals monitoring auto-injected in root layout.
 
 ### Development Dependencies (`devDependencies` in `package.json`):
+
 1. **`typescript` (`6.0.3`)**: Strict type-checker enforcing type safety across the entire codebase.
 2. **`@types/node` (`26.1.2`)**: TypeScript type definitions for Node.js runtime environment.
 3. **`@types/react` (`19.2.17`)**: TypeScript type definitions for React 19.
@@ -222,6 +225,7 @@ portfolioAG/
 ## 4. Complete Configuration Specifications
 
 ### A. Next.js Configuration ([next.config.mjs](next.config.mjs))
+
 - **Image Optimization**:
   - Formats: `["image/avif", "image/webp"]`
   - Device Sizes: `[640, 750, 828, 1080, 1200, 1920, 2048]`
@@ -237,6 +241,7 @@ portfolioAG/
   - `/assets/images/:path*`, `/assets/font/:path*`: `Cache-Control: public, max-age=31536000, immutable`
 
 ### B. TypeScript Configuration ([tsconfig.json](tsconfig.json))
+
 - **Target**: `ES6`
 - **Module Resolution**: `bundler`
 - **Strict Mode**: `strict: true`
@@ -244,11 +249,13 @@ portfolioAG/
 - **No Emit**: `noEmit: true` (Next.js handles compilation)
 
 ### C. ESLint Configuration ([eslint.config.js](eslint.config.js))
+
 - Uses ESLint 9 Flat Config format.
 - Ignored Paths: `node_modules/**`, `.next/**`, `coverage/**`, `tsconfig.tsbuildinfo`.
 - Rules: Enforces `react-hooks/rules-of-hooks: error`, `react-hooks/exhaustive-deps: warn`, JSX accessibility rules, and turns off unnecessary React-in-JSX requirements for React 19.
 
 ### D. Deployment Configurations
+
 - **Vercel**: Deployment configuration automatically detects Next.js 16 App Router, serving static pre-rendered routes with edge analytics.
 - **Netlify ([netlify.toml](netlify.toml))**:
   ```toml
@@ -261,6 +268,7 @@ portfolioAG/
   ```
 
 ### E. Maintenance Mode Middleware Proxy ([proxy.ts](proxy.ts))
+
 - Controls sitewide maintenance fallback behavior via `process.env.MAINTENANCE_MODE === "true"`.
 - Performs URL rewrites to `/maintenance` with `Retry-After: 3600` and `Cache-Control: no-store, must-revalidate`.
 - Exempts static assets (`.png`, `.jpg`, `.svg`, `.webp`, `.mp4`, `.woff2`), `/_next/`, `/api/*`, `robots.txt`, and `sitemap.xml`.
@@ -270,11 +278,12 @@ portfolioAG/
 ## 5. Design System & Styling Infrastructure
 
 ### A. Typography Specifications
+
 - **Recoleta** (Editorial Serif Display Font):
   Loaded locally in [`public/assets/font/font.css`](public/assets/font/font.css) via `@font-face` across 2 case-corrected WOFF2 variants (Linux production server compatible):
   1. Regular (`400`, Normal) — `/assets/font/recoleta/recoleta-regular.woff2`
   2. Medium (`500`, Normal) — `/assets/font/recoleta/recoleta-medium.woff2`
-  CSS Variable: `--fontFamily-recoleta: "Recoleta", serif;`.
+     CSS Variable: `--fontFamily-recoleta: "Recoleta", serif;`.
 - **Poppins** (Modern Sans-Serif Body Font):
   Loaded via `next/font/google` in `app/layout.tsx` across weights `300`, `400`, `500`, `600`, `700`.
   CSS Variable: `--fontFamily-poppins: "Poppins", sans-serif;`.
@@ -282,6 +291,7 @@ portfolioAG/
 ### B. HSL Color Token System ([styles/legacy.css](styles/legacy.css))
 
 #### Color Tokens (`:root`):
+
 - `--bg-black`: `hsla(0, 0%, 0%, 1)` (Primary background)
 - `--bg-smoky-black`: `hsla(0, 0%, 6%, 1)` (Secondary dark background)
 - `--bg-eerie-black`: `hsla(0, 0%, 13%, 1)` (Card surfaces & tile borders)
@@ -295,23 +305,28 @@ portfolioAG/
 ## 6. Complete Data & Content Engine Manifest ([data/constants.tsx](data/constants.tsx))
 
 ### A. Technical Skills Categories (`techSkills`):
+
 1. **Frontend**: React, Next.js, JavaScript, TypeScript, HTML, CSS.
 2. **Backend**: Node.js, Express, NestJS, Python, Java, C.
 3. **Tools & Database**: Git, MongoDB, MySQL, Docker, Figma.
 
 ### B. Achievements & Certifications (`certs`):
+
 - 3 high-resolution certificate imagery items (`certificate01.png`, `certificate02.png`, `certificate03.png`).
 
 ### C. Services Offered (`services`):
+
 1. `FULL STACK DEVELOPMENT`
 2. `PROJECT MANAGEMENT`
 3. `GRAPHIC DESIGNING`
 4. `DATABASE MANAGEMENT`
 
 ### D. Client Endorsement (`testimonial`):
+
 - Quote from Yash Santosh Hule (Founder of BM25) endorsing full stack development deliverables.
 
 ### E. Single Source of Truth Contact Details (`contactItems`):
+
 - **Phone**: `+91 84335 09521`
 - **Address**: `401 Jayram Sadan, Sunil Nagar, DNC rd, Dombivali East 421201.`
 - **Emails**: `aadigunjal0975@gmail.com`, `aadityagunjal0975@gmail.com`
@@ -344,28 +359,34 @@ declare module 'three/examples/jsm/controls/OrbitControls'
 ## 8. Key Engineering Modules & Architectural Patterns
 
 ### 1. Interactive 3D WebGL Globe (`components/ui/Globe.tsx`)
+
 - **Engine**: Three.js + GSAP OrbitControls.
 - **Rendering**: InstancedMesh rendering thousands of individual dots sampled from `world_alpha_mini.jpg`.
 - **GLSL Shaders**: Custom vertex & fragment shaders handling Fresnel rim lighting, color blending, and mouse-interaction extrusion effects.
 
 ### 2. Server-Shell + Client-Behavior Split Pattern
+
 - **Header**: Static markup rendered by `Header.tsx` (Server), scroll/toggle events handled by `HeaderBehavior.tsx` (Client).
 - **Preloader**: Curtain markup rendered by `Preloader.tsx` (Server), split animation triggered by `PreloaderBehavior.tsx` (Client).
 - **Cursor**: Custom dual-layer spans rendered by `Cursor.tsx` (Server), mouse tracking handled by `CursorBehavior.tsx` (Client).
 
 ### 3. Lenis Smooth Inertia Scroll (`hooks/useLenis.ts`)
+
 - Hardware-accelerated smooth scrolling using Lenis with RAF animation loop.
 - Automatically respects `prefers-reduced-motion: reduce`.
 
 ### 4. Categorized Tech Stack Showcase (`components/sections/about/SkillsTab.tsx`)
+
 - Maps skills data to brand icons (`react-icons/si` & `react-icons/fa`).
 - Uses `IntersectionObserver` to trigger a staggered entrance reveal animation (65ms delay per tile).
 
 ### 5. Interactive Typewriter (`components/ui/Typewriter.tsx`)
+
 - Character-by-character text typing loop.
 - React StrictMode safe with timeout cleanup arrays and `cancelled` ref guards to prevent race conditions.
 
 ### 6. Automated JSON-LD Schema Infrastructure (`lib/schema.ts` & `components/shared/structured-data.tsx`)
+
 - Injects structured schema payloads for `Person`, `WebSite`, and `BreadcrumbList` directly into the document head.
 
 ---

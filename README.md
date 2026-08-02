@@ -46,24 +46,24 @@ A modern, elegant, and fully responsive personal portfolio website built with Ne
 
 ## Technology Stack
 
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| Next.js | 16.2.4 | App Router framework with SSR/SSG, file-based routing |
-| React | 19.2.5 | Component-driven UI with hooks and StrictMode |
-| TypeScript | 5.4.0 | Static typing with strict mode for type-safe development |
-| Tailwind CSS | 4.0.0 | Utility-first CSS framework with custom theme extensions |
-| Three.js | 0.183.2 | Core engine for the interactive 3D globe with shader materials |
-| GSAP | 3.14.2 | High-performance animations for globe interactions |
-| Lenis | Latest | Hardware-accelerated smooth scrolling with RAF loop |
-| react-icons | Latest | Tech stack logos for the Skillsets showcase (Simple Icons + Font Awesome sets) |
-| Google Fonts | Poppins | Modern sans-serif typography for optimal readability |
-| Recoleta Font | Custom (WOFF2) | Elegant serif display font for headings and titles |
-| Font Awesome | 6.x (CDN) | Comprehensive icon library for UI elements |
-| Web3Forms | API | Serverless contact form submission handling |
-| ESLint | 9.39.4 | Code linting with Next.js configuration |
-| Prettier | 3.0.0 | Consistent code formatting |
-| PostCSS | 8.4.20 | CSS processing with Autoprefixer |
-| pnpm | 9.15.9 | Package manager pinned via the `packageManager` field for reproducible installs |
+| Technology    | Version        | Purpose                                                                         |
+| ------------- | -------------- | ------------------------------------------------------------------------------- |
+| Next.js       | 16.2.4         | App Router framework with SSR/SSG, file-based routing                           |
+| React         | 19.2.5         | Component-driven UI with hooks and StrictMode                                   |
+| TypeScript    | 5.4.0          | Static typing with strict mode for type-safe development                        |
+| Tailwind CSS  | 4.0.0          | Utility-first CSS framework with custom theme extensions                        |
+| Three.js      | 0.183.2        | Core engine for the interactive 3D globe with shader materials                  |
+| GSAP          | 3.14.2         | High-performance animations for globe interactions                              |
+| Lenis         | Latest         | Hardware-accelerated smooth scrolling with RAF loop                             |
+| react-icons   | Latest         | Tech stack logos for the Skillsets showcase (Simple Icons + Font Awesome sets)  |
+| Google Fonts  | Poppins        | Modern sans-serif typography for optimal readability                            |
+| Recoleta Font | Custom (WOFF2) | Elegant serif display font for headings and titles                              |
+| Font Awesome  | 6.x (CDN)      | Comprehensive icon library for UI elements                                      |
+| Web3Forms     | API            | Serverless contact form submission handling                                     |
+| ESLint        | 9.39.4         | Code linting with Next.js configuration                                         |
+| Prettier      | 3.0.0          | Consistent code formatting                                                      |
+| PostCSS       | 8.4.20         | CSS processing with Autoprefixer                                                |
+| pnpm          | 9.15.9         | Package manager pinned via the `packageManager` field for reproducible installs |
 
 ## Quick Start
 
@@ -178,14 +178,14 @@ next-app/
 
 ### Color Palette
 
-| Color Variable | HSL Value | Usage |
-|----------------|-----------|-------|
-| `--bg-black` | hsla(0, 0%, 0%, 1) | Primary background |
-| `--bg-smoky-black` | hsla(0, 0%, 6%, 1) | Secondary backgrounds |
-| `--bg-eerie-black` | hsla(0, 0%, 13%, 1) | Borders, cards |
-| `--bg-jet` | hsla(0, 0%, 18%, 1) | Elevated surfaces |
-| `--bg-white` | hsla(0, 0%, 100%, 1) | Accents, text |
-| `--text-light-gray` | hsla(240, 1%, 83%, 1) | Body text |
+| Color Variable      | HSL Value             | Usage                 |
+| ------------------- | --------------------- | --------------------- |
+| `--bg-black`        | hsla(0, 0%, 0%, 1)    | Primary background    |
+| `--bg-smoky-black`  | hsla(0, 0%, 6%, 1)    | Secondary backgrounds |
+| `--bg-eerie-black`  | hsla(0, 0%, 13%, 1)   | Borders, cards        |
+| `--bg-jet`          | hsla(0, 0%, 18%, 1)   | Elevated surfaces     |
+| `--bg-white`        | hsla(0, 0%, 100%, 1)  | Accents, text         |
+| `--text-light-gray` | hsla(240, 1%, 83%, 1) | Body text             |
 
 ### Tailwind Theme Extensions
 
@@ -210,16 +210,16 @@ fontSize: {
 ### Typography Scale
 
 ```css
---fontSize-1: 4.6rem;   /* Hero headlines */
---fontSize-2: 4.5rem;   /* Section titles */
---fontSize-3: 4rem;     /* Major headings */
---fontSize-4: 3rem;     /* Subsection titles */
---fontSize-5: 2.4rem;   /* Card titles */
---fontSize-6: 1.8rem;   /* Navigation, tabs */
---fontSize-7: 2rem;     /* Medium emphasis */
---fontSize-8: 1.6rem;   /* Body text */
---fontSize-9: 1.5rem;   /* Buttons */
---fontSize-10: 1.4rem;  /* Small text, labels */
+--fontSize-1: 4.6rem; /* Hero headlines */
+--fontSize-2: 4.5rem; /* Section titles */
+--fontSize-3: 4rem; /* Major headings */
+--fontSize-4: 3rem; /* Subsection titles */
+--fontSize-5: 2.4rem; /* Card titles */
+--fontSize-6: 1.8rem; /* Navigation, tabs */
+--fontSize-7: 2rem; /* Medium emphasis */
+--fontSize-8: 1.6rem; /* Body text */
+--fontSize-9: 1.5rem; /* Buttons */
+--fontSize-10: 1.4rem; /* Small text, labels */
 ```
 
 ### Font Families
@@ -230,31 +230,37 @@ fontSize: {
 ## Website Sections
 
 ### Header & Navigation
+
 - Fixed position header with scroll-triggered styling changes
 - Mobile-responsive hamburger menu with smooth slide-in animation
 - Navigation links with hover effects and smooth scroll behavior
 - Call-to-action button for direct contact access
 
 ### Hero Section
+
 - Full-width introduction with animated typewriter text effect (React component)
 - 3D tilt-enabled profile image with gradient overlay
 - Downloadable CV button with icon integration
 - Decorative shape elements for visual depth
 
 ### Services Section
+
 - Four service cards: Full Stack Development, Project Management, Graphic Designing, Database Management
 - Animated hover effects with icon-to-title transitions
 - Responsive grid layout adapting from 1 to 4 columns
 - Data-driven rendering from centralized constants
 
 ### About Section (Tabbed Interface)
+
 **About Me Tab**
+
 - Professional biography with personal details
 - Interactive 3D globe (Three.js client component)
 - Social media links (WhatsApp, Instagram, LinkedIn)
 - Contact information display
 
 **Skillsets Tab**
+
 - Premium tech stack showcase grouped by category: **Frontend**, **Backend**, and **Tools & Database**
 - Frontend: React, Next.js, JavaScript, TypeScript, HTML, CSS
 - Backend: Node.js, Express, Python, Java, C
@@ -265,60 +271,69 @@ fontSize: {
 - Fully responsive: 2-column on small phones, `auto-fill` grid (130–150px min) from tablets up, with progressive icon/label sizing at 480/575/768/992/1200 breakpoints
 
 **Achievements Tab**
+
 - Certificate gallery with tilt effects
 - Responsive grid layout for credentials
 
 ### Call to Action
+
 - Prominent section encouraging collaboration
 - "Hire Me Now" button with hover animations
 
 ### Testimonials Section
+
 - Client review with quotation styling
 - Profile card with client image and details
 - Professional endorsement from Yash Santosh Hule (BM25 Founder)
 
 ### Contact Section
+
 - Functional contact form with validation (React component)
 - Embedded Google Maps location
 - Contact details: Phone, Address, Email
 - Web3Forms API integration for submissions
 
 ### Footer
+
 - Copyright information
 - Back to top button with smooth scroll
 
 ## Responsive Breakpoints
 
-| Breakpoint | Target Devices | Key Changes |
-|------------|----------------|-------------|
-| < 575px | Mobile phones | Single column, simplified navigation |
-| ≥ 575px | Large phones | Two-column service grid, profile cards |
-| ≥ 768px | Tablets | Hero grid layout, expanded typography, custom cursor enabled |
-| ≥ 992px | Desktops | Full navigation bar, enhanced interactions |
-| ≥ 1200px | Large screens | Enhanced spacing, larger typography |
-| ≥ 1400px | Extra large | Maximum content width, optimized layout |
+| Breakpoint | Target Devices | Key Changes                                                  |
+| ---------- | -------------- | ------------------------------------------------------------ |
+| < 575px    | Mobile phones  | Single column, simplified navigation                         |
+| ≥ 575px    | Large phones   | Two-column service grid, profile cards                       |
+| ≥ 768px    | Tablets        | Hero grid layout, expanded typography, custom cursor enabled |
+| ≥ 992px    | Desktops       | Full navigation bar, enhanced interactions                   |
+| ≥ 1200px   | Large screens  | Enhanced spacing, larger typography                          |
+| ≥ 1400px   | Extra large    | Maximum content width, optimized layout                      |
 
 ## Animation Library
 
 ### CSS Animations
 
 **Preloader Animation**
+
 ```css
 @keyframes loading { 0% → 100%: scaleY(0) → scaleY(0.3) }
 @keyframes loaded { 0% → 100%: scaleY(0.3) → scaleY(1), opacity: 0 }
 ```
 
 **Header Slide-In**
+
 ```css
 @keyframes slideIn { 0% → 100%: translateY(-100%), opacity: 0 → translateY(0), opacity: 1 }
 ```
 
 **Content Fade**
+
 ```css
 @keyframes fade { 0% → 100%: opacity: 0 → opacity: 1 }
 ```
 
 **Cursor Blink**
+
 ```css
 @keyframes blink { 0%-50%: opacity: 1, 51%-100%: opacity: 0 }
 ```
@@ -326,25 +341,29 @@ fontSize: {
 ### CSS Transitions
 
 **Standard Transitions**
+
 ```css
---transition-1: 0.25s ease;      /* Quick interactions */
---transition-2: 0.5s ease;       /* Medium animations */
+--transition-1: 0.25s ease; /* Quick interactions */
+--transition-2: 0.5s ease; /* Medium animations */
 --transition-3: 1000ms cubic-bezier(0.03, 0.98, 0.52, 0.99); /* Tilt effect */
 ```
 
 ### Three.js & GSAP Animations
+
 - Globe auto-rotation with orbit controls
 - Mouse-hover extrusion effect on globe points
 - Instanced mesh rendering for smooth 60fps performance
 - Custom vertex and fragment shaders for visual effects
 
 ### Lenis Smooth Scrolling
+
 - App-wide smooth scroll mounted once in the root layout via the `SmoothScroll` client provider
 - `useLenis` custom hook owns the RAF loop, cleans up on unmount, and short-circuits when `prefers-reduced-motion: reduce` is set
 - Duration `1.2s` with an exponential ease-out curve for a weighted, inertia-driven feel
 - Native CSS `scroll-behavior: smooth` removed from `html` to avoid conflicting with Lenis' JS scroll
 
 ### Skills Scroll-Triggered Reveal
+
 - `IntersectionObserver` at `0.15` threshold flips a `visible` state once the skills section enters the viewport
 - Each tile fades/translates in with a 65ms per-item cascade and a `cubic-bezier(0.22, 1, 0.36, 1)` ease
 - Respects reduced motion — instantly reveals the final state without animating
@@ -380,18 +399,20 @@ fontSize: {
 module.exports = {
   theme: {
     extend: {
-      colors: { /* your custom colors */ },
-      fontFamily: { /* your custom fonts */ },
-    }
-  }
+      colors: {/* your custom colors */},
+      fontFamily: {/* your custom fonts */},
+    },
+  },
 }
 ```
 
 ### Contact Form Configuration
 
 ```tsx
-{/* Update Web3Forms access key in components/sections/contact/ContactForm.tsx */}
-<input type="hidden" name="access_key" value="YOUR_ACCESS_KEY" />
+{
+  /* Update Web3Forms access key in components/sections/contact/ContactForm.tsx */
+}
+;<input type="hidden" name="access_key" value="YOUR_ACCESS_KEY" />
 ```
 
 The email `<input type="email">` in `ContactForm.tsx` carries `suppressHydrationWarning`
@@ -415,24 +436,28 @@ tolerate those extension-side mutations on that one element only.
 ## Performance Features
 
 **Next.js Optimizations**
+
 - Server-side rendering (SSR) and static site generation (SSG) support
 - Automatic code splitting per route
 - Image preloading for critical assets in layout
 - React Strict Mode enabled for development safety
 
 **Optimized Loading**
+
 - Preloaded critical images via `<link rel="preload">` in layout
 - Font preconnect hints for Google Fonts
 - Self-hosted Recoleta font files (WOFF2) for fast loading
 - Server Components render all static markup (≈17 files); a small set of `*Behavior.tsx` Client Components attach event listeners imperatively without shipping any markup, minimizing the hydration surface
 
 **Efficient CSS**
+
 - CSS custom properties for theme consistency
 - Tailwind CSS utility classes for minimal bundle size
 - Hardware-accelerated animations using transform
 - Legacy CSS consolidated into single file for easy migration
 
 **Type-Safe Development**
+
 - TypeScript strict mode for compile-time error detection
 - Module declarations for CSS, images, and Three.js
 - Path aliases (`@/*`) for clean imports

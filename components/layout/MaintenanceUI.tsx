@@ -9,7 +9,15 @@ import Footer from './Footer'
  */
 export default function MaintenanceUI() {
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', backgroundColor: 'var(--bg-black)' }}>
+    <div
+      style={{
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        backgroundColor: 'var(--bg-black)',
+      }}
+    >
       {/* Universal Sticky Header */}
       <Header />
 
@@ -35,7 +43,8 @@ export default function MaintenanceUI() {
             transform: 'translate(-50%, -50%)',
             width: '650px',
             height: '650px',
-            background: 'radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, rgba(255, 255, 255, 0.04) 40%, transparent 70%)',
+            background:
+              'radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, rgba(255, 255, 255, 0.04) 40%, transparent 70%)',
             filter: 'blur(90px)',
             pointerEvents: 'none',
             zIndex: 2,
@@ -72,7 +81,16 @@ export default function MaintenanceUI() {
               letterSpacing: '0.05em',
             }}
           >
-            <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#fbbf24', display: 'inline-block', boxShadow: '0 0 8px #fbbf24' }} />
+            <span
+              style={{
+                width: '6px',
+                height: '6px',
+                borderRadius: '50%',
+                backgroundColor: '#fbbf24',
+                display: 'inline-block',
+                boxShadow: '0 0 8px #fbbf24',
+              }}
+            />
             <span>SCHEDULED MAINTENANCE • UPGRADE V2.0</span>
           </div>
 
@@ -114,7 +132,8 @@ export default function MaintenanceUI() {
               margin: '0 auto 36px',
             }}
           >
-            Our website is currently undergoing scheduled maintenance to optimize assets and enhance performance. Please check back shortly.
+            Our website is currently undergoing scheduled maintenance to optimize assets and enhance
+            performance. Please check back shortly.
           </p>
 
           {/* Action Buttons Row */}
@@ -130,7 +149,11 @@ export default function MaintenanceUI() {
               margin: '0 auto',
             }}
           >
-            <a href="mailto:aadigunjal0975@gmail.com" className="btn btn:hover" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px' }}>
+            <a
+              href="mailto:aadigunjal0975@gmail.com"
+              className="btn btn:hover"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '10px' }}
+            >
               <span className="span">Email Inquiry</span>
               <i className="fa-solid fa-envelope" aria-hidden />
             </a>
@@ -163,7 +186,14 @@ export default function MaintenanceUI() {
           alt=""
           aria-hidden
           className="shape shape-1"
-          style={{ position: 'absolute', top: '10%', left: '5%', pointerEvents: 'none', opacity: 0.4, zIndex: 1 }}
+          style={{
+            position: 'absolute',
+            top: '10%',
+            left: '5%',
+            pointerEvents: 'none',
+            opacity: 0.4,
+            zIndex: 1,
+          }}
         />
         <Image
           src="/assets/images/hero-shape-2.png"
@@ -172,7 +202,14 @@ export default function MaintenanceUI() {
           alt=""
           aria-hidden
           className="shape shape-2"
-          style={{ position: 'absolute', bottom: '5%', right: '5%', pointerEvents: 'none', opacity: 0.4, zIndex: 1 }}
+          style={{
+            position: 'absolute',
+            bottom: '5%',
+            right: '5%',
+            pointerEvents: 'none',
+            opacity: 0.4,
+            zIndex: 1,
+          }}
         />
       </main>
 

@@ -20,13 +20,13 @@ If you discover a security vulnerability in this project, please report it respo
 
 This project implements the following security headers via `next.config.mjs`:
 
-| Header | Value |
-|---|---|
+| Header                      | Value                                          |
+| --------------------------- | ---------------------------------------------- |
 | `Strict-Transport-Security` | `max-age=63072000; includeSubDomains; preload` |
-| `X-Content-Type-Options` | `nosniff` |
-| `X-Frame-Options` | `SAMEORIGIN` |
-| `Referrer-Policy` | `strict-origin-when-cross-origin` |
-| `Permissions-Policy` | `camera=(), microphone=(), geolocation=()` |
+| `X-Content-Type-Options`    | `nosniff`                                      |
+| `X-Frame-Options`           | `SAMEORIGIN`                                   |
+| `Referrer-Policy`           | `strict-origin-when-cross-origin`              |
+| `Permissions-Policy`        | `camera=(), microphone=(), geolocation=()`     |
 
 ## Dependencies
 

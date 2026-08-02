@@ -7,9 +7,7 @@ export default function TestimonialSection() {
     <section className="section testi" aria-label="what our client says" id="review">
       <div className="container">
         <div className="testi-content">
-          <blockquote className="title h4 section-text">
-            {testimonial.quote}
-          </blockquote>
+          <blockquote className="title h4 section-text">{testimonial.quote}</blockquote>
 
           <div className="profile-card">
             <figure

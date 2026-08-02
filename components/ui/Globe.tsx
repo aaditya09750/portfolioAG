@@ -104,7 +104,11 @@ export default function Globe() {
       camera = new THREE.PerspectiveCamera(30, sizes.width / sizes.height, 1, 1000)
       camera.position.z = window.innerWidth > 700 ? 100 : 140
 
-      renderer = new THREE.WebGLRenderer({ canvas: c.querySelector('.globe-canvas'), antialias: true, alpha: true })
+      renderer = new THREE.WebGLRenderer({
+        canvas: c.querySelector('.globe-canvas'),
+        antialias: true,
+        alpha: true,
+      })
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
       const pointLight = new THREE.PointLight(0x081b26, 12, 200)
@@ -132,13 +136,17 @@ export default function Globe() {
       controls.enableRotate = true
       controls.enablePan = false
       controls.enableZoom = false
-      controls.minPolarAngle = (Math.PI / 2) - 0.5
-      controls.maxPolarAngle = (Math.PI / 2) + 0.5
+      controls.minPolarAngle = Math.PI / 2 - 0.5
+      controls.maxPolarAngle = Math.PI / 2 + 0.5
     }
 
     const setBaseSphere = () => {
       const baseSphere = new THREE.SphereGeometry(22, 50, 50)
-      const baseMaterial = new THREE.MeshStandardMaterial({ color: 0x030a0d, transparent: true, opacity: 0.95 })
+      const baseMaterial = new THREE.MeshStandardMaterial({
+        color: 0x030a0d,
+        transparent: true,
+        opacity: 0.95,
+      })
       baseMesh = new THREE.Mesh(baseSphere, baseMaterial)
       scene.add(baseMesh)
     }
@@ -195,7 +203,7 @@ export default function Globe() {
           const dotsForLat = Math.max(1, Math.floor(circumference * dotDensity))
 
           for (let x = 0; x < dotsForLat; x++) {
-            const long = -180 + x * 360 / dotsForLat
+            const long = -180 + (x * 360) / dotsForLat
             if (!visibilityForCoordinate(long, lat)) continue
             const pos = calcPosFromLatLonRad(long, lat)
             positions.push(pos)
@@ -322,7 +330,11 @@ export default function Globe() {
 
   return (
     /* --width and --height drive the aspect-ratio via .img-holder CSS */
-    <figure className="skilset1 img-holder" style={{ '--width': '570', '--height': '420' } as React.CSSProperties} id="globe-mask">
+    <figure
+      className="skilset1 img-holder"
+      style={{ '--width': '570', '--height': '420' } as React.CSSProperties}
+      id="globe-mask"
+    >
       <div id="globe-container" ref={containerRef}>
         <canvas className="globe-canvas" />
       </div>

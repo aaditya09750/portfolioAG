@@ -49,10 +49,44 @@ export const certs = [
 
 /* ─── Services ────────────────────────────────────────────────────── */
 export const services = [
-  { icon: '1', label: <>FULL STACK<br />DEVELOPMENT</> },
-  { icon: '2', label: <>PROJECT<br />MANAGEMENT</> },
-  { icon: '3', label: <>GRAPHIC <br />DESIGNING</> },
-  { icon: '4', label: <>DATABASE <br />MANAGEMENT</> },
+  {
+    icon: '1',
+    label: (
+      <>
+        FULL STACK
+        <br />
+        DEVELOPMENT
+      </>
+    ),
+  },
+  {
+    icon: '2',
+    label: (
+      <>
+        PROJECT
+        <br />
+        MANAGEMENT
+      </>
+    ),
+  },
+  {
+    icon: '3',
+    label: (
+      <>
+        GRAPHIC <br />
+        DESIGNING
+      </>
+    ),
+  },
+  {
+    icon: '4',
+    label: (
+      <>
+        DATABASE <br />
+        MANAGEMENT
+      </>
+    ),
+  },
 ]
 
 /* ─── Testimonial ─────────────────────────────────────────────────── */

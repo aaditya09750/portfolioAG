@@ -7,4 +7,3 @@ export { default as SmoothScroll } from './SmoothScroll'
 export { default as Tilt } from './Tilt'
 export { default as NotFoundUI } from './NotFoundUI'
 export { default as MaintenanceUI } from './MaintenanceUI'
-

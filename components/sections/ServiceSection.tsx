@@ -12,7 +12,8 @@ export default function ServiceSection() {
                 <div className="card-icon">
                   <Image
                     src={`/assets/images/service-icon-${icon}.svg`}
-                    width={80} height={80}
+                    width={80}
+                    height={80}
                     loading="lazy"
                     alt="service icon"
                   />

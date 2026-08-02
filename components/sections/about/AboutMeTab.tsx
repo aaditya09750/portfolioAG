@@ -11,11 +11,11 @@ export default function AboutMeTab() {
 
         <p className="section-text">
           A passionate Full Stack Developer. Specialized in build, develop and deploy robust and
-          scalable frontend and backend systems. With a commitment to excellence, I&#39;m known for my
-          problem solving skills and adeptness at meeting deadlines. A fast learner, I stay updated on
-          industry trends through selfstudy, bringing technical expertise and enthusiasm to contribute to
-          impactful projects. My goal is to apply what I learn to real world challenges and contribute
-          meaningfully to the field.
+          scalable frontend and backend systems. With a commitment to excellence, I&#39;m known for
+          my problem solving skills and adeptness at meeting deadlines. A fast learner, I stay
+          updated on industry trends through selfstudy, bringing technical expertise and enthusiasm
+          to contribute to impactful projects. My goal is to apply what I learn to real world
+          challenges and contribute meaningfully to the field.
         </p>
 
         <ul className="about-list">

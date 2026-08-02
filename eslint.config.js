@@ -1,7 +1,5 @@
 import nextConfig from 'eslint-config-next/core-web-vitals'
 import prettierConfig from 'eslint-config-prettier'
-import jsxA11y from 'eslint-plugin-jsx-a11y'
-import reactHooks from 'eslint-plugin-react-hooks'
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -10,29 +8,8 @@ export default [
     ignores: ['node_modules/**', '.next/**', 'coverage/**', '*.tsbuildinfo'],
   },
 
-  // Next.js core web vitals rules
+  // Next.js core web vitals rules (includes react-hooks and jsx-a11y plugins)
   ...nextConfig,
-
-  // React Hooks enforcement
-  {
-    plugins: {
-      'react-hooks': reactHooks,
-    },
-    rules: {
-      'react-hooks/rules-of-hooks': 'error',
-      'react-hooks/exhaustive-deps': 'warn',
-    },
-  },
-
-  // JSX Accessibility rules
-  {
-    plugins: {
-      'jsx-a11y': jsxA11y,
-    },
-    rules: {
-      ...jsxA11y.configs.recommended.rules,
-    },
-  },
 
   // Prettier conflict resolution (must be last)
   prettierConfig,

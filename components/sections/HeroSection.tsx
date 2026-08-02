@@ -7,7 +7,6 @@ export default function HeroSection() {
   return (
     <div className="hero text-center" id="home">
       <div className="container">
-
         {/* Portrait with pill border outline */}
         <div className="banner-outline has-after">
           <div
@@ -43,7 +42,8 @@ export default function HeroSection() {
             </a>
 
             <p className="hero-text">
-              Bringing Your Vision To Life,<br />
+              Bringing Your Vision To Life,
+              <br />
               pixel by pixel.
             </p>
           </div>
@@ -72,7 +72,6 @@ export default function HeroSection() {
         />
 
         <HeroParallax />
-
       </div>
     </div>
   )

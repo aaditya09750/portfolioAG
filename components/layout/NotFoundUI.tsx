@@ -10,7 +10,15 @@ import Footer from './Footer'
  */
 export default function NotFoundUI() {
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', backgroundColor: 'var(--bg-black)' }}>
+    <div
+      style={{
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        backgroundColor: 'var(--bg-black)',
+      }}
+    >
       {/* Universal Sticky Header */}
       <Header />
 
@@ -73,7 +81,16 @@ export default function NotFoundUI() {
               letterSpacing: '0.05em',
             }}
           >
-            <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#ef4444', display: 'inline-block', boxShadow: '0 0 8px #ef4444' }} />
+            <span
+              style={{
+                width: '6px',
+                height: '6px',
+                borderRadius: '50%',
+                backgroundColor: '#ef4444',
+                display: 'inline-block',
+                boxShadow: '0 0 8px #ef4444',
+              }}
+            />
             <span>404 • ROUTE NOT FOUND</span>
           </div>
 
@@ -118,7 +135,8 @@ export default function NotFoundUI() {
               margin: '0 auto 36px',
             }}
           >
-            The destination you are looking for has been moved, renamed, or never existed in this realm.
+            The destination you are looking for has been moved, renamed, or never existed in this
+            realm.
           </p>
 
           {/* Action Buttons Row */}
@@ -134,7 +152,11 @@ export default function NotFoundUI() {
               margin: '0 auto',
             }}
           >
-            <Link href="/" className="btn btn:hover" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px' }}>
+            <Link
+              href="/"
+              className="btn btn:hover"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '10px' }}
+            >
               <span className="span">Return To Home</span>
               <i className="fa-solid fa-house" aria-hidden />
             </Link>
@@ -164,7 +186,14 @@ export default function NotFoundUI() {
           alt=""
           aria-hidden
           className="shape shape-1"
-          style={{ position: 'absolute', top: '10%', left: '5%', pointerEvents: 'none', opacity: 0.4, zIndex: 1 }}
+          style={{
+            position: 'absolute',
+            top: '10%',
+            left: '5%',
+            pointerEvents: 'none',
+            opacity: 0.4,
+            zIndex: 1,
+          }}
         />
         <Image
           src="/assets/images/hero-shape-2.png"
@@ -173,7 +202,14 @@ export default function NotFoundUI() {
           alt=""
           aria-hidden
           className="shape shape-2"
-          style={{ position: 'absolute', bottom: '5%', right: '5%', pointerEvents: 'none', opacity: 0.4, zIndex: 1 }}
+          style={{
+            position: 'absolute',
+            bottom: '5%',
+            right: '5%',
+            pointerEvents: 'none',
+            opacity: 0.4,
+            zIndex: 1,
+          }}
         />
       </main>
 

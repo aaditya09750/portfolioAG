@@ -42,10 +42,26 @@ export default function Header() {
             </div>
 
             <ul className="navbar-list">
-              <li><Link href="/#home" className="navbar-link" data-nav-link>Home</Link></li>
-              <li><Link href="/#about" className="navbar-link" data-nav-link>About</Link></li>
-              <li><Link href="/#review" className="navbar-link" data-nav-link>Review</Link></li>
-              <li><Link href="/#contact" className="navbar-link" data-nav-link>Contact</Link></li>
+              <li>
+                <Link href="/#home" className="navbar-link" data-nav-link>
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href="/#about" className="navbar-link" data-nav-link>
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="/#review" className="navbar-link" data-nav-link>
+                  Review
+                </Link>
+              </li>
+              <li>
+                <Link href="/#contact" className="navbar-link" data-nav-link>
+                  Contact
+                </Link>
+              </li>
             </ul>
           </nav>
 

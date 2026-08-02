@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import React, { useEffect, useRef } from 'react'
 
@@ -14,15 +14,11 @@ export default function Typewriter({ lines }: Props) {
     // This is critical for React StrictMode, which mounts + unmounts + remounts
     // in development; without cleanup the two effect runs race and double-type.
     const timers: ReturnType<typeof setTimeout>[] = []
-    let cancelled = false   // guard: don't fire new timeouts after cleanup
+    let cancelled = false // guard: don't fire new timeouts after cleanup
 
     let currentLine = 0
 
-    const typeWriterLine = (
-      lineElement: HTMLSpanElement,
-      text: string,
-      cb?: () => void
-    ) => {
+    const typeWriterLine = (lineElement: HTMLSpanElement, text: string, cb?: () => void) => {
       let index = 0
       lineElement.textContent = ''
       lineElement.classList.add('typing')
@@ -53,17 +49,19 @@ export default function Typewriter({ lines }: Props) {
         })
       } else {
         // All lines done — pause, clear, then restart loop
-        timers.push(setTimeout(() => {
-          if (cancelled) return
-          currentLine = 0
-          refs.current.forEach((line) => {
-            if (line) {
-              line.classList.remove('done')
-              line.textContent = ''
-            }
-          })
-          typeNextLine()
-        }, 1000))
+        timers.push(
+          setTimeout(() => {
+            if (cancelled) return
+            currentLine = 0
+            refs.current.forEach((line) => {
+              if (line) {
+                line.classList.remove('done')
+                line.textContent = ''
+              }
+            })
+            typeNextLine()
+          }, 1000),
+        )
       }
     }
 
@@ -92,7 +90,9 @@ export default function Typewriter({ lines }: Props) {
           key={i}
           className="typewriter-line"
           data-typewriter={l}
-          ref={(el) => { refs.current[i] = el }}
+          ref={(el) => {
+            refs.current[i] = el
+          }}
         />
       ))}
     </>
