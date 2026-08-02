@@ -44,8 +44,10 @@ portfolioAG/
 ├── .nvmrc                              # Explicit Node.js version requirement (.nvmrc: 22)
 ├── .prettierignore                     # File exclusions for Prettier code formatter
 ├── .prettierrc.json                    # Prettier formatting standards (no tabs, 2 spaces, singleQuote, semi: false)
+├── AGENTS.md                           # Master single source of truth and guidelines for AI coding agents
 ├── ARCHITECTURE.md                     # Technical system design and architectural specifications
 ├── CHANGELOG.md                        # Version release notes and project iteration history
+├── CLAUDE.md                           # Specific execution guidelines for Claude AI agent
 ├── CODE_OF_CONDUCT.md                  # Contributor code of conduct standards
 ├── CONTRIBUTING.md                     # Developer contribution guidelines and pull request instructions
 ├── LICENSE                             # MIT Open Source License agreement

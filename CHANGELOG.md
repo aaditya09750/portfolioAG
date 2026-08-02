@@ -17,12 +17,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Commitlint enforcing Conventional Commits format
 - Dynamic `robots.txt` and `sitemap.xml` generation
 - JSON-LD structured data (Person, WebSite schemas)
-- Custom branded 404 page
-- Maintenance mode middleware with `MAINTENANCE_MODE` env toggle
+- Custom branded 404 and Maintenance mode pages matching site design system
+- Global `<Cursor />` provider in `app/layout.tsx` for sitewide custom tracking
+- Root-relative anchor routing (`/#home`, `/#about`, `/#review`, `/#contact`) across headers and footers
+- Priority LCP preloading for hero background shape graphics
+- AI agent governance files (`AGENTS.md`, `CLAUDE.md`)
+- Maintenance mode middleware proxy (`proxy.ts`) with `MAINTENANCE_MODE` env toggle
 - Vercel Analytics and Speed Insights integration
 - `cn()` Tailwind class merge utility (`lib/utils.ts`)
 - `.editorconfig`, `.nvmrc`, `.gitattributes`, `.env.example`
-- `CHANGELOG.md`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `ARCHITECTURE.md`
+- `PROJECT_CONTEXT.md`, `CHANGELOG.md`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `ARCHITECTURE.md`
 - New NPM scripts: `typecheck`, `format`, `check`, `prepare`
 
 ### Changed

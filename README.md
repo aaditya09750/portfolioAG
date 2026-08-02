@@ -2,15 +2,15 @@
 
 ![Profile Views](https://komarev.com/ghpvc/?username=aaditya09750&style=for-the-badge&color=0e75b6&label=Profile+Views)
 
-![Next.js](https://img.shields.io/badge/Next.js-16.2.4-000000?style=for-the-badge&logo=next.js&logoColor=white)
-![React](https://img.shields.io/badge/React-19.2.5-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.4-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-16.2.12-000000?style=for-the-badge&logo=next.js&logoColor=white)
+![React](https://img.shields.io/badge/React-19.2.8-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-6.0.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.3.3-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
 ![Three.js](https://img.shields.io/badge/Three.js-0.183.2-000000?style=for-the-badge&logo=three.dot.js&logoColor=white)
 ![Responsive](https://img.shields.io/badge/Responsive-Design-00D4FF?style=for-the-badge&logo=css3&logoColor=white)
 ![Font Awesome](https://img.shields.io/badge/Font_Awesome-6.x-528DD7?style=for-the-badge&logo=fontawesome&logoColor=white)
 
-A modern, elegant, and fully responsive personal portfolio website built with Next.js 16 (App Router), React 19, TypeScript, and Tailwind CSS. Features advanced 3D graphics, interactive animations, and a stunning dark theme design — migrated from the original static HTML/CSS/JS portfolio into a modern component-driven architecture.
+A modern, elegant, and fully responsive personal portfolio website built with Next.js 16 (App Router), React 19, TypeScript 6, and Tailwind CSS v4. Features advanced 3D graphics, interactive animations, and a stunning dark theme design — migrated from the original static HTML/CSS/JS portfolio into a modern component-driven architecture.
 
 **Developer:** Aaditya Gunjal - Full Stack Developer
 
@@ -48,21 +48,21 @@ A modern, elegant, and fully responsive personal portfolio website built with Ne
 
 | Technology    | Version        | Purpose                                                                         |
 | ------------- | -------------- | ------------------------------------------------------------------------------- |
-| Next.js       | 16.2.4         | App Router framework with SSR/SSG, file-based routing                           |
-| React         | 19.2.5         | Component-driven UI with hooks and StrictMode                                   |
-| TypeScript    | 5.4.0          | Static typing with strict mode for type-safe development                        |
-| Tailwind CSS  | 4.0.0          | Utility-first CSS framework with custom theme extensions                        |
+| Next.js       | 16.2.12        | App Router framework with SSR/SSG, file-based routing                           |
+| React         | 19.2.8         | Component-driven UI with hooks and StrictMode                                   |
+| TypeScript    | 6.0.3          | Static typing with strict mode for type-safe development                        |
+| Tailwind CSS  | 4.3.3          | Utility-first CSS framework with custom theme extensions                        |
 | Three.js      | 0.183.2        | Core engine for the interactive 3D globe with shader materials                  |
 | GSAP          | 3.14.2         | High-performance animations for globe interactions                              |
-| Lenis         | Latest         | Hardware-accelerated smooth scrolling with RAF loop                             |
-| react-icons   | Latest         | Tech stack logos for the Skillsets showcase (Simple Icons + Font Awesome sets)  |
+| Lenis         | 1.3.25         | Hardware-accelerated smooth scrolling with RAF loop                             |
+| react-icons   | 5.5.0          | Tech stack logos for the Skillsets showcase (Simple Icons + Font Awesome sets)  |
 | Google Fonts  | Poppins        | Modern sans-serif typography for optimal readability                            |
 | Recoleta Font | Custom (WOFF2) | Elegant serif display font for headings and titles                              |
 | Font Awesome  | 6.x (CDN)      | Comprehensive icon library for UI elements                                      |
 | Web3Forms     | API            | Serverless contact form submission handling                                     |
-| ESLint        | 9.39.4         | Code linting with Next.js configuration                                         |
-| Prettier      | 3.0.0          | Consistent code formatting                                                      |
-| PostCSS       | 8.4.20         | CSS processing with Autoprefixer                                                |
+| ESLint        | 9.39.5         | Code linting with Next.js flat configuration                                    |
+| Prettier      | 3.6.2          | Consistent code formatting                                                      |
+| PostCSS       | 8.5.25         | CSS processing with Autoprefixer                                                |
 | pnpm          | 9.15.9         | Package manager pinned via the `packageManager` field for reproducible installs |
 
 ## Quick Start
@@ -72,26 +72,32 @@ A modern, elegant, and fully responsive personal portfolio website built with Ne
 ```bash
 # Clone the repository
 git clone https://github.com/aaditya09750/portfolioAG.git
-cd portfolioAG/next-app
+cd portfolioAG
 
 # Install dependencies
 pnpm install
 
-# Start development server
-pnpm dev
+# Start development server with Turbopack
+pnpm dev:turbo
 ```
 
-### Build & Production
+### Build & Audit Commands
 
 ```bash
+# Verify typecheck and linting in one command
+pnpm check
+
+# TypeScript strict type checking
+pnpm typecheck
+
+# ESLint flat config audit
+pnpm lint
+
 # Build for production
 pnpm build
 
-# Start production server
+# Start production server preview
 pnpm start
-
-# Run linting
-pnpm lint
 ```
 
 ### Deployment
