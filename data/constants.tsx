@@ -22,6 +22,7 @@ export const techSkills: SkillCategory[] = [
     items: [
       { label: 'Node.js', iconKey: 'nodejs' },
       { label: 'Express', iconKey: 'express' },
+      { label: 'NestJS', iconKey: 'nestjs' },
       { label: 'Python', iconKey: 'python' },
       { label: 'Java', iconKey: 'java' },
       { label: 'C', iconKey: 'c' },

@@ -48,7 +48,7 @@ export default function AboutMeTab() {
               </a>
               <a
                 rel="noopener noreferrer"
-                href="https://www.linkedin.com/in/aadityagunjal0975/"
+                href="https://www.linkedin.com/in/aaditya9750/"
                 className="social-link"
                 title="LinkedIn"
                 target="_blank"
