@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import HeaderBehavior from './HeaderBehavior'
 
 /**
@@ -6,17 +7,17 @@ import HeaderBehavior from './HeaderBehavior'
  * scroll logic is delegated to <HeaderBehavior />, a sibling Client
  * Component that renders nothing and wires up listeners imperatively.
  *
- * Initial aria state represents the closed-menu state; HeaderBehavior
- * updates these attributes via setAttribute when the user toggles.
+ * Links use absolute path anchors (/#home, /#about, etc.) so navigation
+ * correctly routes back to home sections from any page or 404 route.
  */
 export default function Header() {
   return (
     <>
       <header className="header" data-header>
         <div className="container">
-          <a href="#" className="logo">
+          <Link href="/" className="logo">
             <Image src="/assets/images/aglogo.png" width={60} height={60} alt="logo" />
-          </a>
+          </Link>
 
           <nav
             className="navbar"
@@ -26,9 +27,9 @@ export default function Header() {
             aria-hidden="true"
           >
             <div className="navbar-top">
-              <a href="#" className="logo">
+              <Link href="/" className="logo">
                 <Image src="/assets/images/aglogo.png" width={40} height={40} alt="logo" />
-              </a>
+              </Link>
 
               <button
                 className="nav-close-btn"
@@ -41,16 +42,16 @@ export default function Header() {
             </div>
 
             <ul className="navbar-list">
-              <li><a href="#home" className="navbar-link" data-nav-link>Home</a></li>
-              <li><a href="#about" className="navbar-link" data-nav-link>About</a></li>
-              <li><a href="#review" className="navbar-link" data-nav-link>Review</a></li>
-              <li><a href="#contact" className="navbar-link" data-nav-link>Contact</a></li>
+              <li><Link href="/#home" className="navbar-link" data-nav-link>Home</Link></li>
+              <li><Link href="/#about" className="navbar-link" data-nav-link>About</Link></li>
+              <li><Link href="/#review" className="navbar-link" data-nav-link>Review</Link></li>
+              <li><Link href="/#contact" className="navbar-link" data-nav-link>Contact</Link></li>
             </ul>
           </nav>
 
-          <a href="#contact" className="btn btn:hover">
+          <Link href="/#contact" className="btn btn:hover">
             <span className="span">Send Message</span>
-          </a>
+          </Link>
 
           <button
             className="nav-open-btn btn:hover"

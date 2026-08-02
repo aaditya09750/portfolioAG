@@ -6,7 +6,7 @@ node_modules/
 
 # Local env files
 .env
-.env.*.local
+.env*.local
 .env.local
 
 # Logs
@@ -34,22 +34,7 @@ coverage/
 # Cache
 .cache/
 
-# macOS
-.DS_Store
-
-# Windows
-Thumbs.db
-
-# Next-app specifics
-next-app/.next/
-next-app/node_modules/
-next-app/.env.local
-
-# Ignore build output folders
+# Build output
 dist/
 build/
 out/
-
-# Optional: lockfiles (uncomment if you don't want to commit lockfiles)
-# package-lock.json
-# yarn.lock

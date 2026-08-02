@@ -1,4 +1,4 @@
-import { Header, Preloader, Cursor, Footer, Tilt } from '@/components/layout'
+import { Header, Preloader, Footer, Tilt } from '@/components/layout'
 import {
   HeroSection,
   ServiceSection,
@@ -16,9 +16,6 @@ export default function Home() {
 
       {/* Header — sticky on scroll, hamburger on mobile */}
       <Header />
-
-      {/* Custom cursor — dot + outline, only on ≥768px via CSS */}
-      <Cursor />
 
       {/* Tilt effect — wires [data-tilt] elements after mount */}
       <Tilt />

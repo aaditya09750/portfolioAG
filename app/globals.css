@@ -1,2 +1,4 @@
+@import "tailwindcss";
+
 /* Use consolidated legacy stylesheet for exact original layout */
 @import "../styles/legacy.css";

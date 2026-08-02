@@ -1336,7 +1336,7 @@ textarea.input-field {
     left: -60px;
     transform: translate(-50%, -50%);
     border-radius: var(--radius-circle);
-    z-index: 10;
+    z-index: 99999;
     transition-property: opacity, transform;
     transition-duration: 300ms;
     transition-timing-function: ease-in-out;

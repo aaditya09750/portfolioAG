@@ -4,46 +4,64 @@ import { useEffect } from 'react'
 
 /**
  * Tracks cursor position and hover state on interactive elements.
- * The two <span> targets are rendered by the server in <Cursor />;
- * this component only attaches listeners and updates inline styles.
+ * Uses event delegation on document to work dynamically across all pages & routes.
  */
 export default function CursorBehavior() {
   useEffect(() => {
-    const cursors = Array.from(document.querySelectorAll<HTMLElement>('[data-cursor]'))
-    const hoveredElements = Array.from(
-      document.querySelectorAll('button, a, .btn, .navbar-link'),
-    )
+    const dot = document.querySelector<HTMLElement>('.cursor-dot')
+    const outline = document.querySelector<HTMLElement>('.cursor-outline')
+
+    if (!dot || !outline) return
 
     const onMove = (event: MouseEvent) => {
       const { clientX: x, clientY: y } = event
-      const [dot, outline] = cursors
-      if (dot) {
-        dot.style.left = `${x}px`
-        dot.style.top = `${y}px`
-      }
-      if (outline) {
-        setTimeout(() => {
-          outline.style.left = `${x}px`
-          outline.style.top = `${y}px`
-        }, 80)
+      dot.style.left = `${x}px`
+      dot.style.top = `${y}px`
+
+      // Smooth outline follow
+      outline.style.left = `${x}px`
+      outline.style.top = `${y}px`
+    }
+
+    const onOver = (event: MouseEvent) => {
+      const target = event.target as HTMLElement | null
+      if (
+        target?.closest(
+          'a, button, .btn, .navbar-link, input, textarea, [role="button"], [data-nav-link], [data-nav-toggler]',
+        )
+      ) {
+        dot.classList.add('hovered')
+        outline.classList.add('hovered')
       }
     }
 
-    const onHover = () => cursors.forEach((c) => c.classList.add('hovered'))
-    const onLeave = () => cursors.forEach((c) => c.classList.remove('hovered'))
+    const onOut = (event: MouseEvent) => {
+      const target = event.target as HTMLElement | null
+      if (
+        target?.closest(
+          'a, button, .btn, .navbar-link, input, textarea, [role="button"], [data-nav-link], [data-nav-toggler]',
+        )
+      ) {
+        dot.classList.remove('hovered')
+        outline.classList.remove('hovered')
+      }
+    }
 
-    window.addEventListener('mousemove', onMove)
-    hoveredElements.forEach((el) => {
-      el.addEventListener('mouseover', onHover)
-      el.addEventListener('mouseout', onLeave)
-    })
+    const onLeaveWindow = () => {
+      dot.classList.remove('hovered')
+      outline.classList.remove('hovered')
+    }
+
+    window.addEventListener('mousemove', onMove, { passive: true })
+    document.addEventListener('mouseover', onOver, { passive: true })
+    document.addEventListener('mouseout', onOut, { passive: true })
+    document.addEventListener('mouseleave', onLeaveWindow, { passive: true })
 
     return () => {
       window.removeEventListener('mousemove', onMove)
-      hoveredElements.forEach((el) => {
-        el.removeEventListener('mouseover', onHover)
-        el.removeEventListener('mouseout', onLeave)
-      })
+      document.removeEventListener('mouseover', onOver)
+      document.removeEventListener('mouseout', onOut)
+      document.removeEventListener('mouseleave', onLeaveWindow)
     }
   }, [])
 
