@@ -6,8 +6,6 @@
  * copyright 2024 Aaditya Gunjal
  */
 
-
-
 /**
  * RECOLETA FONT
  */
@@ -15,7 +13,8 @@
 @font-face {
   font-family: 'Recoleta';
   src: local('Recoleta Regular'), local('Recoleta-Regular'),
-    url('./recoleta/Recoleta-Regular.woff2') format('woff2');
+    url('/assets/font/recoleta/recoleta-regular.woff2') format('woff2'),
+    url('./recoleta/recoleta-regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -24,7 +23,8 @@
 @font-face {
   font-family: 'Recoleta';
   src: local('Recoleta Medium'), local('Recoleta-Medium'),
-    url('./recoleta/Recoleta-Medium.woff2') format('woff2');
+    url('/assets/font/recoleta/recoleta-medium.woff2') format('woff2'),
+    url('./recoleta/recoleta-medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;

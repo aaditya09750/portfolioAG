@@ -31,7 +31,7 @@
   --border-gainsboro: hsla(220, 13%, 91%, 1);
   --border-eerie-black: hsla(0, 0%, 13%, 1);
   --border-smoky-black: hsla(0, 0%, 6%, 1);
-  --fontFamily-recoleta: "Recoleta";
+  --fontFamily-recoleta: "Recoleta", serif;
   --fontFamily-poppins: "Poppins", sans-serif;
   --fontSize-1: 4.6rem;
   --fontSize-2: 4.5rem;
