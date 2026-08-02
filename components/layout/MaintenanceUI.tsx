@@ -179,6 +179,7 @@ export default function MaintenanceUI() {
           height={232}
           alt=""
           aria-hidden
+          priority
           className="shape shape-1"
           style={{
             position: 'absolute',
@@ -195,6 +196,7 @@ export default function MaintenanceUI() {
           height={497}
           alt=""
           aria-hidden
+          priority
           className="shape shape-2"
           style={{
             position: 'absolute',
