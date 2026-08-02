@@ -1,8 +1,5 @@
-import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import Header from './Header/Header'
-import Footer from './Footer'
 
 /**
  * NotFoundUI Component — Statically rendered 404 error page fallback UI.
@@ -19,9 +16,6 @@ export default function NotFoundUI() {
         backgroundColor: 'var(--bg-black)',
       }}
     >
-      {/* Universal Sticky Header */}
-      <Header />
-
       {/* Main Single-Column Centered Layout Container */}
       <main
         style={{
@@ -117,7 +111,7 @@ export default function NotFoundUI() {
             style={{
               fontFamily: 'var(--fontFamily-recoleta)',
               fontSize: 'clamp(2.4rem, 4vw, 3.6rem)',
-              fontWeight: 600,
+              fontWeight: 500,
               color: 'var(--text-white)',
               margin: '0 0 12px 0',
             }}
@@ -212,9 +206,6 @@ export default function NotFoundUI() {
           }}
         />
       </main>
-
-      {/* Universal Footer */}
-      <Footer />
     </div>
   )
 }

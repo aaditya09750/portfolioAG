@@ -1,7 +1,4 @@
-import React from 'react'
 import Image from 'next/image'
-import Header from './Header/Header'
-import Footer from './Footer'
 
 /**
  * MaintenanceUI Component — Statically rendered maintenance mode fallback UI.
@@ -18,9 +15,6 @@ export default function MaintenanceUI() {
         backgroundColor: 'var(--bg-black)',
       }}
     >
-      {/* Universal Sticky Header */}
-      <Header />
-
       {/* Main Single-Column Centered Layout Container */}
       <main
         style={{
@@ -99,7 +93,7 @@ export default function MaintenanceUI() {
             style={{
               fontFamily: 'var(--fontFamily-recoleta)',
               fontSize: 'clamp(3.5rem, 6vw, 6rem)',
-              fontWeight: 700,
+              fontWeight: 500,
               lineHeight: 1.15,
               color: 'var(--text-white)',
               margin: '0 0 12px 0',
@@ -212,9 +206,6 @@ export default function MaintenanceUI() {
           }}
         />
       </main>
-
-      {/* Universal Footer */}
-      <Footer />
     </div>
   )
 }

@@ -64,9 +64,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
         <link rel="shortcut icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
 
-        {/* Recoleta custom font */}
-        <link rel="stylesheet" href="/assets/font/font.css" />
-
         {/* Font Awesome 6.5.1 — used for FA brand icons (GitHub, LinkedIn, WhatsApp, Instagram) */}
         <link
           rel="stylesheet"

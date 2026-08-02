@@ -1,4 +1,7 @@
 @import 'tailwindcss';
 
+/* Custom Recoleta Font Import */
+@import '../public/assets/font/font.css';
+
 /* Use consolidated legacy stylesheet for exact original layout */
 @import '../styles/legacy.css';

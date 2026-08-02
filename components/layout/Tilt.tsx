@@ -10,27 +10,35 @@ export default function Tilt() {
   useEffect(() => {
     const tiltElements = document.querySelectorAll<HTMLElement>('[data-tilt]')
 
-    function initTilt(this: HTMLElement, event: MouseEvent) {
-      const centerX = this.offsetWidth / 2
-      const centerY = this.offsetHeight / 2
+    const initTilt = (el: HTMLElement, event: MouseEvent) => {
+      const centerX = el.offsetWidth / 2
+      const centerY = el.offsetHeight / 2
       const tiltPosY = ((event.offsetX - centerX) / centerX) * 10
       const tiltPosX = ((event.offsetY - centerY) / centerY) * 10
-      this.style.transform = `perspective(1000px) rotateX(${tiltPosX}deg) rotateY(${-tiltPosY}deg)`
+      el.style.transform = `perspective(1000px) rotateX(${tiltPosX}deg) rotateY(${-tiltPosY}deg)`
     }
 
-    function resetTilt(this: HTMLElement) {
-      this.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)'
+    const resetTilt = (el: HTMLElement) => {
+      el.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)'
     }
+
+    const handlers = new Map<HTMLElement, { move: (_event: MouseEvent) => void; out: () => void }>()
 
     tiltElements.forEach((el) => {
-      el.addEventListener('mousemove', initTilt as EventListener)
-      el.addEventListener('mouseout', resetTilt as EventListener)
+      const move = (event: MouseEvent) => initTilt(el, event)
+      const out = () => resetTilt(el)
+      handlers.set(el, { move, out })
+      el.addEventListener('mousemove', move)
+      el.addEventListener('mouseout', out)
     })
 
     return () => {
       tiltElements.forEach((el) => {
-        el.removeEventListener('mousemove', initTilt as EventListener)
-        el.removeEventListener('mouseout', resetTilt as EventListener)
+        const h = handlers.get(el)
+        if (h) {
+          el.removeEventListener('mousemove', h.move)
+          el.removeEventListener('mouseout', h.out)
+        }
       })
     }
   }, [])

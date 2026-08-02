@@ -68,13 +68,15 @@ export default function Typewriter({ lines }: Props) {
     // Initial delay matches original script.js (800ms)
     timers.push(setTimeout(typeNextLine, 800))
 
+    const currentRefs = refs.current
+
     return () => {
       // Cancel every pending timer so StrictMode's double-invoke
       // doesn't start two concurrent typing chains
       cancelled = true
       timers.forEach(clearTimeout)
       // Reset text content so if remounted we start fresh
-      refs.current.forEach((line) => {
+      currentRefs.forEach((line) => {
         if (line) {
           line.textContent = ''
           line.classList.remove('typing', 'done')

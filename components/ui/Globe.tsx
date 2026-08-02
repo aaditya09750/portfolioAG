@@ -23,7 +23,6 @@ export default function Globe() {
     let baseMesh: any = null
     let minMouseDownFlag = false
     let mouseDown = false
-    let grabbing = false
     let requestId: number | null = null
 
     const c = containerRef.current
@@ -276,14 +275,12 @@ export default function Globe() {
         minMouseDownFlag = true
         if (!mouseDown) mouseup()
       }, 500)
-      grabbing = true
     }
 
     const mouseup = () => {
       mouseDown = false
       if (!minMouseDownFlag) return
       gsap.to(material.uniforms.u_maxExtrusion, { value: 1.0, duration: 0.15 })
-      grabbing = false
     }
 
     const listenTo = () => {
@@ -322,7 +319,7 @@ export default function Globe() {
         if (renderer) {
           renderer.dispose()
         }
-      } catch (e) {
+      } catch {
         // ignore cleanup errors
       }
     }

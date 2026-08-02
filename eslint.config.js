@@ -2,13 +2,13 @@ import nextConfig from 'eslint-config-next/core-web-vitals'
 import prettierConfig from 'eslint-config-prettier'
 
 /** @type {import('eslint').Linter.Config[]} */
-export default [
+const eslintConfig = [
   // Ignore build output and generated files
   {
     ignores: ['node_modules/**', '.next/**', 'coverage/**', '*.tsbuildinfo'],
   },
 
-  // Next.js core web vitals rules (includes react-hooks and jsx-a11y plugins)
+  // Next.js core web vitals rules
   ...nextConfig,
 
   // Prettier conflict resolution (must be last)
@@ -20,10 +20,12 @@ export default [
       // React 19 does not require React in scope
       'react/react-in-jsx-scope': 'off',
       // Allow unused vars prefixed with _
-      '@typescript-eslint/no-unused-vars': [
+      'no-unused-vars': [
         'warn',
         { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
       ],
     },
   },
 ]
+
+export default eslintConfig
