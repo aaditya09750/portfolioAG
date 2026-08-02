@@ -14,7 +14,11 @@ export const metadata: Metadata = {
   title: 'Aaditya Gunjal - Full Stack Developer.',
   description: 'This is a personal portfolio made by Aaditya Gunjal',
   icons: {
-    icon: { url: '/assets/images/favicon.svg', type: 'image/svg+xml' },
+    icon: [
+      { url: '/assets/images/favicon.svg', type: 'image/svg+xml' },
+    ],
+    shortcut: '/assets/images/favicon.svg',
+    apple: '/assets/images/favicon.svg',
   },
 }
 
@@ -22,6 +26,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={poppins.className} suppressHydrationWarning>
       <head>
+        {/* Favicon fallback links for strict browser caching */}
+        <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+        <link rel="shortcut icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+
         {/* Recoleta custom font */}
         <link rel="stylesheet" href="/assets/font/font.css" />
 
