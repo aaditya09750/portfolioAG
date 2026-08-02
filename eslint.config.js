@@ -20,10 +20,7 @@ const eslintConfig = [
       // React 19 does not require React in scope
       'react/react-in-jsx-scope': 'off',
       // Allow unused vars prefixed with _
-      'no-unused-vars': [
-        'warn',
-        { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
-      ],
+      'no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
     },
   },
 ]
