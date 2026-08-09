@@ -5,7 +5,8 @@ Thank you for your interest in contributing! This guide covers the development w
 ## Prerequisites
 
 - **Node.js**: v22+ (see `.nvmrc`)
-- **pnpm**: v9.15.9+ (specified in `packageManager` field)
+- **pnpm**: v11+ (specified in `packageManager` field)
+- **Docker**: v20+ (optional — for containerized deployment)
 
 ## Getting Started
 

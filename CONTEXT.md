@@ -29,6 +29,7 @@
 
 ```
 portfolioAG/
+├── .dockerignore                        # Excludes node_modules, build outputs, and dev configs from Docker build context
 ├── .editorconfig                       # Formatting rules: 2 spaces, UTF-8, trim trailing whitespace
 ├── .env.example                        # Documentation template for environment variables (MAINTENANCE_MODE)
 ├── .env.local                          # Local environment variable overrides (gitignored)
@@ -52,9 +53,11 @@ portfolioAG/
 ├── CONTRIBUTING.md                     # Developer contribution guidelines and pull request instructions
 ├── LICENSE                             # MIT Open Source License agreement
 ├── PROJECT_CONTEXT.md                  # Comprehensive technical context documentation
+├── Dockerfile                          # Multi-stage production container build (deps -> builder -> standalone runner)
 ├── README.md                           # Primary project summary, setup commands, and features guide
 ├── SECURITY.md                         # Security policy, vulnerability disclosures, and headers summary
 ├── commitlint.config.cjs               # Conventional commits message format configuration
+├── docker-compose.yml                  # Local development and container orchestration configuration
 ├── eslint.config.js                    # ESLint flat config (TypeScript, React 19, Hooks, JSX A11y, Prettier)
 ├── lint-staged.config.cjs              # Pre-commit task execution pipeline configuration
 ├── netlify.toml                        # Netlify build & deployment configuration (@netlify/plugin-nextjs)
@@ -268,6 +271,10 @@ portfolioAG/
   [[plugins]]
     package = "@netlify/plugin-nextjs"
   ```
+- **Docker ([Dockerfile](Dockerfile), [docker-compose.yml](docker-compose.yml))**:
+  - Multi-stage build (`deps` -> `builder` -> `runner`) utilizing `node:22-alpine` image.
+  - Leverages Next.js `output: 'standalone'` mode to yield a minimal runtime container image (~180MB).
+  - Configured with non-root security context (`nextjs:nodejs`), default port `3000`, and `HOSTNAME=0.0.0.0`.
 
 ### E. Maintenance Mode Middleware Proxy ([proxy.ts](proxy.ts))
 

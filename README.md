@@ -9,6 +9,7 @@
 ![Three.js](https://img.shields.io/badge/Three.js-0.183.2-000000?style=for-the-badge&logo=three.dot.js&logoColor=white)
 ![Responsive](https://img.shields.io/badge/Responsive-Design-00D4FF?style=for-the-badge&logo=css3&logoColor=white)
 ![Font Awesome](https://img.shields.io/badge/Font_Awesome-6.x-528DD7?style=for-the-badge&logo=fontawesome&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
 A modern, elegant, and fully responsive personal portfolio website built with Next.js 16 (App Router), React 19, TypeScript 6, and Tailwind CSS v4. Features advanced 3D graphics, interactive animations, and a stunning dark theme design — migrated from the original static HTML/CSS/JS portfolio into a modern component-driven architecture.
 
@@ -104,11 +105,32 @@ pnpm start
 
 ```bash
 # Deploy to any Next.js-compatible hosting service
-# Compatible with: Vercel, Netlify, AWS Amplify, Railway
+# Compatible with: Vercel, Netlify, AWS Amplify, Railway, Docker
 
 # For Vercel (recommended for Next.js)
 # Connect your repository and deploy automatically
 ```
+
+### Docker
+
+```bash
+# Build the Docker image
+docker build -t portfolioag .
+
+# Run the container
+docker run -p 3000:3000 portfolioag
+
+# Or use Docker Compose (recommended)
+docker compose up --build
+
+# Run in background
+docker compose up -d --build
+
+# Stop the container
+docker compose down
+```
+
+Visit `http://localhost:3000` after starting the container.
 
 ## Project Structure
 

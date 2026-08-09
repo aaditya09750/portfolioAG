@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build output
+.next/
+out/
+dist/
+build/
+
+# Version control
+.git/
+.gitattributes
+
+# Environment files (pass via docker run -e or compose)
+.env
+.env*.local
+.env.local
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Coverage & cache
+coverage/
+.cache/
+*.tsbuildinfo
+
+# Documentation (not needed in image)
+*.md
+!README.md
+LICENSE
+license
+
+# CI/CD & Git hooks
+.github/
+.husky/
+.editorconfig
+.prettierrc.json
+.prettierignore
+commitlint.config.cjs
+lint-staged.config.cjs
+eslint.config.js

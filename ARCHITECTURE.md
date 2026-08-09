@@ -13,7 +13,8 @@
 | Animation       | GSAP                                      | 3.14.2  |
 | 3D Engine       | Three.js                                  | 0.183.2 |
 | Smooth Scroll   | Lenis                                     | 1.3.25  |
-| Package Manager | pnpm                                      | 9.15.9  |
+| Package Manager | pnpm                                      | 11.21.0 |
+| Container       | Docker                                    | 20+     |
 
 ## Architecture Pattern: Server-First RSC
 
@@ -63,5 +64,6 @@ The application is deployed to both:
 
 - **Vercel** (primary): Auto-deploys from `main` branch with Analytics + Speed Insights
 - **Netlify** (secondary): Configured via `netlify.toml` with `@netlify/plugin-nextjs`
+- **Docker** (self-hosting): Multi-stage `Dockerfile` with `output: 'standalone'` for deployment to any container platform (AWS ECS, GCP Cloud Run, DigitalOcean, Railway, VPS)
 
 For detailed file-level documentation, see [PROJECT_CONTEXT.md](./PROJECT_CONTEXT.md).
