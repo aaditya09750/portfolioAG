@@ -1,0 +1,29 @@
+# Aaditya Gunjal — Full Stack Developer Portfolio
+
+> Aaditya Gunjal is a Full Stack Developer based in Dombivli, Mumbai, Maharashtra, India. This portfolio showcases his technical expertise, professional services, achievements, and contact information.
+
+## About
+
+- [About Aaditya Gunjal](https://aadityag975pf.vercel.app/#about): Overview of Aaditya's background as a Full Stack Developer specializing in building, developing, and deploying robust frontend and backend systems.
+
+## Skills
+
+- [Technical Skills](https://aadityag975pf.vercel.app/#about): Frontend (React, Next.js, JavaScript, TypeScript, HTML, CSS), Backend (Node.js, Express, NestJS, Python, Java, C), Tools & Database (Git, MongoDB, MySQL, Docker, Figma).
+
+## Services
+
+- [Full Stack Development](https://aadityag975pf.vercel.app/#service): End-to-end web application development covering both frontend and backend.
+- [Project Management](https://aadityag975pf.vercel.app/#service): Planning, execution, and delivery of software projects.
+- [Graphic Designing](https://aadityag975pf.vercel.app/#service): Visual design and creative asset production.
+- [Database Management](https://aadityag975pf.vercel.app/#service): Database architecture, optimization, and administration.
+
+## Achievements
+
+- [Certifications & Credentials](https://aadityag975pf.vercel.app/#about): Professional certifications and achievement credentials.
+
+## Contact
+
+- [Get In Touch](https://aadityag975pf.vercel.app/#contact): Contact form, phone (+91 84335 09521), email (aadigunjal0975@gmail.com), and location (Dombivli East, Maharashtra 421201).
+- [GitHub](https://github.com/aaditya09750): Source code and open-source contributions.
+- [LinkedIn](https://www.linkedin.com/in/aaditya9750/): Professional profile and networking.
+- [Resume](https://aadityag975pf.vercel.app/cv.pdf): Downloadable CV/resume.

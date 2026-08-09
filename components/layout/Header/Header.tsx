@@ -16,7 +16,12 @@ export default function Header() {
       <header className="header" data-header>
         <div className="container">
           <Link href="/" className="logo">
-            <Image src="/assets/images/aglogo.png" width={60} height={60} alt="logo" />
+            <Image
+              src="/assets/images/aglogo.png"
+              width={60}
+              height={60}
+              alt="Aaditya Gunjal — AG logo"
+            />
           </Link>
 
           <nav
@@ -28,7 +33,12 @@ export default function Header() {
           >
             <div className="navbar-top">
               <Link href="/" className="logo">
-                <Image src="/assets/images/aglogo.png" width={40} height={40} alt="logo" />
+                <Image
+                  src="/assets/images/aglogo.png"
+                  width={40}
+                  height={40}
+                  alt="Aaditya Gunjal — AG logo"
+                />
               </Link>
 
               <button

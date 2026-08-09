@@ -42,6 +42,7 @@ export default function AboutMeTab() {
                 href="https://github.com/aaditya09750"
                 className="social-link"
                 title="GitHub"
+                aria-label="GitHub profile"
                 target="_blank"
               >
                 <i className="fa-brands fa-github" />
@@ -51,6 +52,7 @@ export default function AboutMeTab() {
                 href="https://www.linkedin.com/in/aaditya9750/"
                 className="social-link"
                 title="LinkedIn"
+                aria-label="LinkedIn profile"
                 target="_blank"
               >
                 <i className="fa-brands fa-linkedin-in" />
@@ -60,6 +62,7 @@ export default function AboutMeTab() {
                 href="https://wa.me/qr/5S6RP74BVGGDH1"
                 className="social-link"
                 title="WhatsApp"
+                aria-label="WhatsApp contact"
                 target="_blank"
               >
                 <i className="fa-brands fa-whatsapp" />
@@ -69,6 +72,7 @@ export default function AboutMeTab() {
                 href="https://www.instagram.com/_aadiii0975_____?igsh=MWoxODk0Z2xrOWh3NA=="
                 className="social-link"
                 title="Instagram"
+                aria-label="Instagram profile"
                 target="_blank"
               >
                 <i className="fa-brands fa-instagram" />

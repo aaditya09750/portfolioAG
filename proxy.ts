@@ -21,6 +21,7 @@ export function proxy(request: NextRequest) {
     /^\/api\//,
     /^\/robots\.txt$/,
     /^\/sitemap\.xml$/,
+    /^\/llms\.txt$/,
     /^\/maintenance$/,
   ]
 
