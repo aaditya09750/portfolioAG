@@ -24,6 +24,9 @@ pnpm lint
 # Format codebase with Prettier
 pnpm format
 
+# Run all checks at once (format, lint, typecheck, build)
+pnpm verify
+
 # Verify production build compilation
 pnpm build
 ```

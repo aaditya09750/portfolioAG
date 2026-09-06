@@ -88,6 +88,9 @@ pnpm dev:turbo
 # Verify typecheck and linting in one command
 pnpm check
 
+# Complete verification (format, lint, typecheck, build)
+pnpm verify
+
 # TypeScript strict type checking
 pnpm typecheck
 

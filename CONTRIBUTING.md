@@ -36,6 +36,7 @@ pnpm dev:turbo
 | `pnpm typecheck` | Run TypeScript type checking            |
 | `pnpm format`    | Format all files with Prettier          |
 | `pnpm check`     | Run lint + typecheck                    |
+| `pnpm verify`    | Run format + lint + typecheck + build   |
 
 ### Commit Messages
 
