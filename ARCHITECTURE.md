@@ -13,7 +13,7 @@
 | Animation       | GSAP                                      | 3.14.2  |
 | 3D Engine       | Three.js                                  | 0.183.2 |
 | Smooth Scroll   | Lenis                                     | 1.3.25  |
-| Package Manager | pnpm                                      | 11.21.0 |
+| Package Manager | pnpm                                      | 12.3.4  |
 | Container       | Docker                                    | 20+     |
 
 ## Architecture Pattern: Server-First RSC

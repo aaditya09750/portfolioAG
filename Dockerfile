@@ -1,7 +1,7 @@
 # ─── Stage 1: Dependencies ───────────────────────────────────────────────────
 FROM node:22-alpine AS deps
 
-RUN corepack enable && corepack prepare pnpm@11.21.0 --activate
+RUN corepack enable && corepack prepare pnpm@12.3.4 --activate
 WORKDIR /app
 
 # Copy dependency manifests only (maximises layer cache)
@@ -12,7 +12,7 @@ RUN pnpm install --frozen-lockfile
 # ─── Stage 2: Builder ────────────────────────────────────────────────────────
 FROM node:22-alpine AS builder
 
-RUN corepack enable && corepack prepare pnpm@11.21.0 --activate
+RUN corepack enable && corepack prepare pnpm@12.3.4 --activate
 WORKDIR /app
 
 COPY --from=deps /app/node_modules ./node_modules

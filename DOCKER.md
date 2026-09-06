@@ -3,7 +3,7 @@
 ![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Docker Compose](https://img.shields.io/badge/Docker_Compose-v2-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-22--alpine-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![pnpm](https://img.shields.io/badge/pnpm-11.21.0-F69220?style=for-the-badge&logo=pnpm&logoColor=white)
+![pnpm](https://img.shields.io/badge/pnpm-12.3.4-F69220?style=for-the-badge&logo=pnpm&logoColor=white)
 ![Next.js](https://img.shields.io/badge/Next.js-16.2.12-000000?style=for-the-badge&logo=next.js&logoColor=white)
 ![Alpine Linux](https://img.shields.io/badge/Alpine_Linux-3.21-0D597F?style=for-the-badge&logo=alpinedotlinux&logoColor=white)
 
@@ -11,7 +11,7 @@ Comprehensive guide and command reference for containerizing, building, running,
 
 **Developer:** Aaditya Gunjal - Full Stack Developer  
 **Framework:** Next.js 16.2.12 (App Router — Standalone Production Output)  
-**Package Manager:** pnpm 11.21.0 (Corepack Enabled)
+**Package Manager:** pnpm 12.3.4 (Corepack Enabled)
 
 ---
 
@@ -37,7 +37,7 @@ Comprehensive guide and command reference for containerizing, building, running,
 | **Docker Compose** | v2.x      | Multi-container service orchestration                             |
 | **Alpine Linux**   | 3.21      | Lightweight, security-hardened Linux base distribution            |
 | **Node.js**        | 22-alpine | JavaScript runtime environment for server components              |
-| **pnpm**           | 11.21.0   | Fast, disk-space-efficient package manager activated via Corepack |
+| **pnpm**           | 12.3.4    | Fast, disk-space-efficient package manager activated via Corepack |
 | **Next.js**        | 16.2.12   | App Router framework compiled into standalone production server   |
 
 ---
